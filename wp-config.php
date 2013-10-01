@@ -19,10 +19,10 @@
 define('DB_NAME', 'rozengrals');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'rozengrals');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'rozengrals124');
 
 /** Имя сервера MySQL */
 define('DB_HOST', '195.122.8.92:5500');

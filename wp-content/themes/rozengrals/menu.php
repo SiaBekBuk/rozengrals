@@ -957,7 +957,7 @@ Template Name: Menu
 
 
     </td>
-    <td style="width:220px; vertical-align: top;">
+    <td style="width:240px; vertical-align: top;">
         <div id="menu-categories">
             <ul>
                 <li id="liSalads">Закуски и Салаты</li>

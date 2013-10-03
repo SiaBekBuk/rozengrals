@@ -689,6 +689,7 @@ a {
     font-family: 'cyrillicgothregular';
     color: #951A26;
     margin-top: 90px;
+    margin-left: 30px;
 }
 
 #menu-categories li {
@@ -1069,8 +1070,9 @@ a {
     width: 140px;
     text-align: left;
     /*border:1px solid gray;*/
-    font-size: 18px;
-    font-family: 'cyrillicgothregular';
+    font-size: 17px;
+    /*font-family: 'cyrillicgothregular';*/
+    /*font-weight: bold;*/
 }
 
 #footer-nav li {
@@ -1084,10 +1086,21 @@ a {
 #copyright {
     text-align: center;
     position: relative;
-    top: -6px;
+    top: -131px;
     width: 150px;
     margin: 0 auto;
     color: #6e0001;
+}
+
+#footer-info {
+    width: 300px;
+    position: relative;
+    z-index: 1002;
+    top: -169px;
+    left: 607px;
+    color: #6e0001;
+    text-align: right;
+    font-size: 17px;
 }
 
 /*####ContactForm####*/

@@ -62,17 +62,9 @@ jQuery(function () {
         jQuery('#pl-drinks').show();
     });
 
-//    jQuery('#liJuice').click(function () {
-//        jQuery('#pl-juice').show();
-//    });
-
     jQuery('#liBeerAndSnacks').click(function () {
         jQuery('#pl-beer-and-snacks').show();
     });
-
-//    jQuery('#liSnacks').click(function () {
-//        jQuery('#pl-snacks').show();
-//    });
 
     jQuery('#liChampagne').click(function () {
         jQuery('#pl-champagne').show();

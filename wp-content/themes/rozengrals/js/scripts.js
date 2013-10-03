@@ -7,6 +7,18 @@ jQuery(document).ready(function () {
     });
     jQuery('#menu-item-14 a').attr('href', tmphref);
 
+    jQuery('#edienkarte').find('.cat-item-name').each(function (index) {
+        jQuery(this).attr({
+            title: jQuery(this).text().trim()
+        });
+    });
+
+    jQuery('#edienkarte').find('.item-comment').each(function (index) {
+        jQuery(this).attr({
+            title: jQuery(this).text().replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
+        });
+    });
+
 });
 
 jQuery(function () {
@@ -50,17 +62,17 @@ jQuery(function () {
         jQuery('#pl-drinks').show();
     });
 
-    jQuery('#liJuice').click(function () {
-        jQuery('#pl-juice').show();
+//    jQuery('#liJuice').click(function () {
+//        jQuery('#pl-juice').show();
+//    });
+
+    jQuery('#liBeerAndSnacks').click(function () {
+        jQuery('#pl-beer-and-snacks').show();
     });
 
-    jQuery('#liBeer').click(function () {
-        jQuery('#pl-beer').show();
-    });
-
-    jQuery('#liSnacks').click(function () {
-        jQuery('#pl-snacks').show();
-    });
+//    jQuery('#liSnacks').click(function () {
+//        jQuery('#pl-snacks').show();
+//    });
 
     jQuery('#liChampagne').click(function () {
         jQuery('#pl-champagne').show();

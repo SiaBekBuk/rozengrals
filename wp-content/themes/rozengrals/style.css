@@ -688,7 +688,7 @@ a {
     font-size: 22px;
     font-family: 'cyrillicgothregular';
     color: #951A26;
-    margin-top: 140px;
+    margin-top: 90px;
 }
 
 #menu-categories li {
@@ -698,10 +698,11 @@ a {
 #menu-categories li:hover {
     color: #762600;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .menu-cat-content {
-    width: 600px;
+    width: 640px;
     height: 100%;
     position: relative;
     top: 60px;
@@ -735,7 +736,7 @@ a {
     font-weight: bold;
     position: relative;
     top: 25px;
-    left: 20px;
+    left: 74px;
     float: right !important;
 }
 
@@ -747,11 +748,13 @@ a {
 
 .cat-item {
     margin-bottom: 5px;
+    /*height:32px;*/
 }
 
 .cat-item div {
     float: left;
     font-size: 22px;
+    /*height:100%;*/
 }
 
 .cat-item-number {
@@ -760,24 +763,55 @@ a {
     text-align: left;
 }
 
+.cat-item-name, .item-comment {
+    width: 465px;
+    text-align: left;
+}
+
 .cat-item-name {
-    width: 420px;
+    cursor: help;
+}
+
+.cat-item-cl {
+    width: 25px;
+    height: 16px;
+    font-family: "Times New Roman", sans-serif;
+    font-style: italic;
+    font-size: 12px !important;
+    font-weight: bold;
+    color: #6E2528;
+    margin-top: 10px;
 }
 
 .cat-item-price {
-    width: 60px;
+    width: 45px;
     height: 32px;
     text-align: right;
     color: #6E2528;
 }
 
 .item-comment {
-    width: 420px;
     font-family: "Times New Roman", sans-serif;
     font-style: italic;
     font-size: 14px !important;
     font-weight: bold;
     margin-left: 33px;
+    cursor: help;
+}
+
+.item-small-comment {
+    color: #6E2528;
+    font-family: "Times New Roman", sans-serif;
+    font-style: italic;
+    font-size: 14px !important;
+    font-weight: bold;
+}
+
+.additional-menu-items {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    margin-top: 55px;
 }
 
 #pl-snacks-and-salads {
@@ -873,7 +907,7 @@ a {
     height: 97px;
 }
 
-#pl-desserts {
+#pl-desserts, #pl-hot-drinks {
     color: #00367B;
 }
 
@@ -883,6 +917,57 @@ a {
 
 #desserts-first {
     background: url('images/desserts_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#hot-drinks-first {
+    background: url('images/hotdrinks_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#pl-drinks {
+    color: #00592E;
+}
+
+#pl-drinks .item-comment {
+    color: #6E2528;
+}
+
+#drinks-first {
+    background: url('images/drinks_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#juice-first {
+    background: url('images/juice_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#pl-beer-and-snacks {
+    color: #6E2528;
+}
+
+#pl-beer-and-snacks .item-small-comment {
+    color: #B01116;
+}
+
+#beer-first {
+    background: url('images/beer_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#snacks-first {
+    background: url('images/snacks_first.png') no-repeat;
     background-size: contain;
     width: 99px;
     height: 97px;

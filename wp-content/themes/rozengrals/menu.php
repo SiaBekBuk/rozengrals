@@ -955,12 +955,743 @@ Template Name: Menu
         </div>
     </div>
 
+    <!--##########CHAMPAGNE#AND#SPARKLING#WINE#################-->
+    <div id="pl-champagne" class="menu-cat-content" style="display: none;">
+        <div class="menu-cat-header">
+            <div id="champagne-first" class="cat-first-char"></div>
+            <div class="cat-text">ампанское и</div>
+            <div id="sparkling-wine-first" class="cat-first-char"></div>
+            <div class="cat-text">гристое вино</div>
+            <div class="lvl">LVL</div>
+        </div>
+
+        <div class="menu-items">
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Rīgas Pussaldais
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">20cl</div>
+                <div class="cat-item-price">2,40</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Rīgas Pussaldais
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">9,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Estrella de Murviedo Frizzante White
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">9,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Freixenet Cordon Negro Brut
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Asti Martini Dolce Asti Docg
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">20,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Laurent-Perrier Demi Sec
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">75,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Duval Leroy Brut
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">80,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Laurent-Perrier Ultra Brut
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">100,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Duval Leroy Brut Rose
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">130,00</div>
+            </div>
+
+            <div id="additional-white-wine" class="additional-menu-items">
+                <div class="menu-cat-header">
+                    <div id="white-wine-first" class="cat-first-char"></div>
+                    <div class="cat-text">елое вино</div>
+                </div>
+
+                <div class="menu-items">
+                    <div class="item-group-description">
+                        <span class="item-small-comment">Французкое вино</span>
+                    </div>
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Grand noir Sauvignon Blanc 2009/2010/
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">12,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Raimat Chardonnay 2009/D.O.Costers del Serge
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">16,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Malesan Bordeaux Medium Sweet 2007/ <span class="item-small-comment">Bordeaux AOC</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">18,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Leon Beyer Riesling 2008/2009/ <span class="item-small-comment">Alsace</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">24,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Alain Geoffroy Chablis 2009/ <span class="item-small-comment">Bourgogne AOC</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">26,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Alain Geoffroy Chablis Pr-1 Beauroy 2006/ <span
+                                class="item-small-comment">Bourgogne AOC</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">50,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Alain Geoffroy Chablis Gr-gru Les Clos 2005/ <span
+                                class="item-small-comment">Bourgogne AOC</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">75,00</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--##########WHITE###WINE#################-->
+    <div id="pl-white-wine" class="menu-cat-content" style="display: none;">
+        <div class="menu-cat-header">
+            <div id="white-wine-first" class="cat-first-char"></div>
+            <div class="cat-text">елое вино</div>
+            <div class="lvl">LVL</div>
+        </div>
+
+        <div class="menu-items">
+            <div class="item-group-description">
+                <span class="item-small-comment">Испанское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Alba de Murviedro Sauvignon Blanc
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">20cl</div>
+                <div class="cat-item-price">2,50</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Margues DeCaceres Satinela semi dulce 2011/ <span class="item-small-comment">Rioja DOC</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Margues DeCaceres Blanco 2010
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Pago de Cirsus Chardonnay 2009/ <span class="item-small-comment">Navarra Oak Aged</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Итальянское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Rocca Delle Macie Orvieto Classico 2010
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">15,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Canaletto Pinot Grigio Delle Venezie 2009/ <span class="item-small-comment">Vineto</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Fontanafredda Chardonnay Langhe 2008
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">22,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Калифорнийское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Gallo Family Vineyards Chardonnay 2008/ <span class="item-small-comment">Central Valley</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Robert Mondavi Woodbridge Chardonnay 2009/ <span class="item-small-comment">California</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">18,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Чилийское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Carmen Gewurztraminer 2008/09/ <span class="item-small-comment">D.O.Central Valley</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Tarapaca Reserva Chardonnay 2008/ <span class="item-small-comment">Maipo Valley</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Caliterra Reserva Sauvignon Blanc 2010/ <span class="item-small-comment">Colchagua Valley</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">17,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Австралийское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Hardys bin 141 Colombard Chardonnay
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">20cl</div>
+                <div class="cat-item-price">2,50</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Hardys Stamp Riesling Gewurztraminer 2008/ <br/><span class="item-small-comment">South-Eastern regions</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    McWilliam's Hanwood Estate Chardonnay 2006
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">17,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Новозеландское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Nobilo Marlborough Sauvignon Blanc 2010
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Coopers Creek Sauvignon Blanc Marlborough Dillon's Point
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">28,00</div>
+            </div>
+        </div>
+    </div>
+
+    <!--##########RED###WINE#################-->
+    <div id="pl-red-wine" class="menu-cat-content" style="display: none;">
+    <div class="menu-cat-header">
+        <div id="red-wine-first" class="cat-first-char"></div>
+        <div class="cat-text">расное вино</div>
+        <div class="lvl">LVL</div>
+    </div>
+
+    <div class="menu-items">
+    <div class="item-group-description">
+        <span class="item-small-comment">Французкое вино</span>
+    </div>
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Grand Noir Cabernet/Syrah 2009
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">12,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Castel Syrah-Grenache medium sweet 2006/07/ <span class="item-small-comment">AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">14,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau Bellevue La Ferriere Gran vin de Bordeaux 2007/ <span class="item-small-comment">Bordeaux</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">17,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Antoine Moueix Merlot-Cabernet Sauvignon 2007/ <span class="item-small-comment">Bordeaux AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">19,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Bernard Defaix Bourgogne Pinot Noir 2009/ <span class="item-small-comment">Bordeaux</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">20,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            L.Jadot Fleurie Poncereau 2009
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">22,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Antoine Moueix St. Emillion 2007/ <span class="item-small-comment">Bordeaux AOC Grand CRU</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">30,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau La Commanderie 2006/ <span class="item-small-comment">CRU Bourgeois Sant-Estephe AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">35,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau Cissac/ <span class="item-small-comment">Haut-MedocC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">35,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau Mont-Redon Chateneuf du Pape 2007
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">45,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Gevrey-Chambertin Regnard 2002
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">65,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau Belgrave 2004/06/ <span class="item-small-comment">Haut-Medoc Grand CRU AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">85,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Couvent des Jacobins 2003/ <span class="item-small-comment">Saint Emilion Grand CRU AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">90,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Chateau Nenin 1997/ <span class="item-small-comment">Pomerol AOC</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">120,00</div>
+    </div>
+
+    <div class="item-group-description">
+        <span class="item-small-comment">Испанское вино</span>
+    </div>
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Murviedro Reserva
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">20cl</div>
+        <div class="cat-item-price">2,50</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Paternina Banda Azul Crianza Rioja 2006
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">18,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Marques De Caceres Crianza 2008
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">22,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Raiza Gran Reserva <span class="item-small-comment">Rioja</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">26,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            La Vicalanda Reserva 2005/<span class="item-small-comment">Rioja</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">35,00</div>
+    </div>
+
+    <div class="item-group-description">
+        <span class="item-small-comment">Итальянское вино</span>
+    </div>
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Radda Chianti Classico 2008/ <span class="item-small-comment">Tuscany DOCG</span>
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">20,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Masi Campofiorin Ripasso 2008
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">30,00</div>
+    </div>
+
+    <div class="cat-item clearfix">
+        <div class="cat-item-name">
+            Virtuoso Syrah Sicilia
+        </div>
+        <div class="cat-item-number"></div>
+        <div class="cat-item-cl">75cl</div>
+        <div class="cat-item-price">24,00</div>
+    </div>
+
+    </div>
+    </div>
+
+    <!--##########ROSE#WINE#################-->
+    <div id="pl-rose-wine" class="menu-cat-content" style="display: none;">
+        <div class="menu-cat-header">
+            <div id="red-wine-first" class="cat-first-char"></div>
+            <div class="cat-text">расное вино</div>
+            <div class="lvl">LVL</div>
+        </div>
+
+        <div class="menu-items">
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Калифорнийское вино</span>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Gallo Family Vineyards Cabernet Sauvignon 2009/ <span
+                        class="item-small-comment">Central Valle y</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">15,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Robert Mondavi Private Selection Pinot Noir 2009/ <span class="item-small-comment">Woodbridge</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">23,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Robert Mondavi 2006/ <span class="item-small-comment">Wb Cabernet sauvignon</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">24,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Dancing Bull Zinfandel 2009/ <span class="item-small-comment">Coastal regions</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">29,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Чилийское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Carmen Carmenere 2007/2008
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Carmen Reserve Cabernet Sauvignon 2008
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">24,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Calittera Tributo Malbec 2009/ <span class="item-small-comment">Colchagua Valley</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">25,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Canepa Magnificum Cabernet Sauvignon
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">50,00</div>
+            </div>
+
+            <div class="item-group-description">
+                <span class="item-small-comment">Австралийское вино</span>
+            </div>
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Hardys Bin Cabernet Shiraz 2009/2010
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">20cl</div>
+                <div class="cat-item-price">2,50</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    Hardys Stamp Cabernet Sauvignon/Merlot 2008/2009
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">16,00</div>
+            </div>
+
+            <div class="cat-item clearfix">
+                <div class="cat-item-name">
+                    McWilliams Hanwood Estate Shiraz 2008/ <span class="item-small-comment">South-Eastern regions</span>
+                </div>
+                <div class="cat-item-number"></div>
+                <div class="cat-item-cl">75cl</div>
+                <div class="cat-item-price">17,00</div>
+            </div>
+
+            <div id="additional-rose-wine" class="additional-menu-items">
+                <div class="menu-cat-header">
+                    <div id="rose-wine-first" class="cat-first-char"></div>
+                    <div class="cat-text">озовое вино</div>
+                </div>
+
+                <div class="menu-items">
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Spier Discover Rose 2008/ <span class="item-small-comment">South Africa</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">12,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Gallo Family Vineyards White Zinfandel 2010/ <span class="item-small-comment">Central Valley, California</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">14,00</div>
+                    </div>
+
+                    <div class="cat-item clearfix">
+                        <div class="cat-item-name">
+                            Robert Mondavi Wb Zinfandel Rose 2005/06/ <span class="item-small-comment">California</span>
+                        </div>
+                        <div class="cat-item-number"></div>
+                        <div class="cat-item-cl">75cl</div>
+                        <div class="cat-item-price">18,00</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     </td>
     <td style="width:240px; vertical-align: top;">
         <div id="menu-categories">
             <ul>
-                <li id="liSalads">Закуски и Салаты</li>
+                <li id="liSalads" class='active'>Закуски и Салаты</li>
                 <li id="liSoups">Супы</li>
                 <li id="liFish">Рыбные блюда</li>
                 <li id="liMeat">Мясные блюда</li>
@@ -969,8 +1700,6 @@ Template Name: Menu
                 <li id="liDesserts">Десерты</li>
                 <li id="liHotDrinks">Горячие напитки</li>
                 <li id="liDrinks">Напитки</li>
-                <!--                <li id="liJuice">Сок</li>-->
-                <!--                <li id="liBeer">Пиво</li>-->
                 <li id="liBeerAndSnacks">Пиво и закуски</li>
                 <li id="liChampagne">Шампанское и<br/>Игристое вино</li>
                 <li id="liWhiteWine">Белое вино</li>

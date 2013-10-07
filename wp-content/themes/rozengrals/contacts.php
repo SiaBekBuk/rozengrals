@@ -44,8 +44,9 @@ Template Name: Contacts
 
             <div id="divContactForm">
                 <span>Задайте нам вопрос</span>
+
                 <form id="contactform" name="contactform" method="post"
-                      action="http://pudeles.lv/%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B/" class="contactform"
+                      action="" class="contactform"
                       enctype="multipart/form-data">
                     <div id="cftbx1" class="cftbx">
                         <input type="text" id="fullname" placeholder="Имя" tabindex="1" name="fullname" required/>

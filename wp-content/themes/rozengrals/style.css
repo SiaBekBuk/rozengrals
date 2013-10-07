@@ -583,7 +583,7 @@ a {
     /*background:url('images/button02.png') no-repeat;*/
 }
 
-#menu-hr {
+#nav-hr {
     width: 80%;
     margin: 0 auto;
     border-top: 1px solid #4b0001;
@@ -666,7 +666,7 @@ a {
 /*#### Edienkarte #############################################################*/
 
 #edienkarte {
-    background: url('images/menu-content-bg.png') no-repeat;
+    background: url('images/menu-content-bg-02.png') no-repeat;
     background-size: 975px 825px;
     width: 975px;
     height: 825px;
@@ -690,6 +690,7 @@ a {
     color: #951A26;
     margin-top: 90px;
     margin-left: 30px;
+    width: 215px;
 }
 
 #menu-categories li {
@@ -697,9 +698,15 @@ a {
 }
 
 #menu-categories li:hover {
-    color: #762600;
+    color: #e40001;
     cursor: pointer;
     text-decoration: underline;
+}
+
+#menu-categories .active {
+    color: #e40001;
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255, 5, 0, 0.27);
 }
 
 .menu-cat-content {
@@ -737,7 +744,7 @@ a {
     font-weight: bold;
     position: relative;
     top: 25px;
-    left: 74px;
+    left: 89px;
     float: right !important;
 }
 
@@ -774,7 +781,7 @@ a {
 }
 
 .cat-item-cl {
-    width: 25px;
+    width: 21px;
     height: 16px;
     font-family: "Times New Roman", sans-serif;
     font-style: italic;
@@ -785,7 +792,7 @@ a {
 }
 
 .cat-item-price {
-    width: 45px;
+    width: 65px;
     height: 32px;
     text-align: right;
     color: #6E2528;
@@ -974,6 +981,124 @@ a {
     height: 97px;
 }
 
+#pl-champagne {
+    color: #00592E;
+}
+
+#pl-champagne .cat-text {
+    font-size: 26px;
+    position: relative;
+    top: 18px;
+}
+
+#pl-champagne .lvl {
+    top: -11px;
+}
+
+#champagne-first {
+    background: url('images/champagne_first.png') no-repeat;
+    background-size: contain;
+    width: 123px;
+    height: 97px;
+}
+
+#sparkling-wine-first {
+    background: url('images/sparkling_wine_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#pl-white-wine, #additional-white-wine {
+    color: #00367B;
+}
+
+#pl-white-wine .cat-item,
+#additional-white-wine .cat-item,
+#pl-champagne .cat-item,
+#pl-red-wine .cat-item,
+#pl-rose-wine .cat-item {
+    margin-bottom: 0;
+    margin-top: -5px;
+    height: 23px;
+}
+
+#pl-white-wine .cat-item-cl,
+#additional-white-wine .cat-item-cl,
+#pl-champagne .cat-item-cl,
+#pl-red-wine .cat-item-cl,
+#pl-rose-wine .cat-item-cl {
+    margin-top: 5px;
+}
+
+#pl-white-wine .cat-item-price,
+#additional-white-wine .cat-item-price,
+#pl-champagne .cat-item-price,
+#pl-red-wine .cat-item-price,
+#pl-rose-wine .cat-item-price {
+    margin-top: -6px;
+}
+
+#pl-white-wine .cat-item-number,
+#additional-white-wine .cat-item-number,
+#pl-champagne .cat-item-number,
+#pl-red-wine .cat-item-number,
+#pl-rose-wine .cat-item-number {
+    height: 25px;
+}
+
+.item-group-description .item-small-comment {
+    font-weight: bold;
+    font-size: 16px !important;
+}
+
+#pl-white-wine .cat-item-name,
+#additional-white-wine .cat-item-name,
+#pl-champagne .cat-item-name,
+#pl-red-wine .cat-item-name,
+#pl-rose-wine .cat-item-name {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+#white-wine-first {
+    background: url('images/white_wine_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#pl-white-wine .item-group-description {
+    margin-top: 10px;
+}
+
+#pl-red-wine, #pl-rose-wine {
+    color: #B01116;
+}
+
+#pl-red-wine .item-small-comment {
+    color: #00367B;
+}
+
+#red-wine-first {
+    background: url('images/red_wine_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+#additional-rose-wine {
+    color: #B31160;
+}
+
+#rose-wine-first {
+    background: url('images/rose-wine-first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
 /*#### End Of Edienkarte #######################################################*/
 
 #reservation-form {
@@ -1086,7 +1211,7 @@ a {
 #copyright {
     text-align: center;
     position: relative;
-    top: -131px;
+    top: 15px;
     width: 150px;
     margin: 0 auto;
     color: #6e0001;

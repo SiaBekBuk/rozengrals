@@ -25,6 +25,10 @@ jQuery(document).ready(function () {
         });
     });
 
+    jQuery('.entry').find('img').each(function () {
+        jQuery(this).addClass(' img-rounded');
+    });
+
 });
 
 jQuery(function () {

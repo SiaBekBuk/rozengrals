@@ -641,6 +641,11 @@ a {
 
 .post img {
     margin: 5px;
+    border: 2px solid rgba(136, 65, 0, 0.78) !important;
+}
+
+.post img:hover {
+    border: 2px solid rgba(198, 89, 0, 0.77) !important;
 }
 
 #youtube_video {
@@ -710,6 +715,10 @@ a {
 
 #gallery img {
     border: 3px solid rgba(136, 65, 0, 0.78) !important;
+}
+
+#gallery img:hover {
+    border: 3px solid rgba(198, 89, 0, 0.77);
 }
 
 #gallery .tab-pane{

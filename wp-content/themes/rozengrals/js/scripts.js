@@ -7,13 +7,19 @@ jQuery(document).ready(function () {
     });
     jQuery('#menu-item-14 a').attr('href', tmphref);
 
-    jQuery('#edienkarte').find('.cat-item-name').each(function (index) {
+    jQuery('#edienkarte').find('.cat-item-name').each(function () {
         jQuery(this).attr({
             title: jQuery(this).text().trim()
         });
     });
 
-    jQuery('#edienkarte').find('.item-comment').each(function (index) {
+    jQuery('#edienkarte').find('.item-comment').each(function () {
+        jQuery(this).attr({
+            title: jQuery(this).text().replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
+        });
+    });
+
+    jQuery('#edienkarte').find('#menu-categories li').each(function () {
         jQuery(this).attr({
             title: jQuery(this).text().replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
         });

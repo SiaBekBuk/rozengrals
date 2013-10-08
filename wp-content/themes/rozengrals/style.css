@@ -643,21 +643,19 @@ a {
     margin: 5px;
 }
 
-#youtube_img {
-/*    background: url('images/youtube_01.png') no-repeat;
-    background-size: contain;*/
+#youtube_video {
     width: 400px;
     height: 225px;
+    margin: 0 auto;
+}
 
+#youtube_img {
+    width: 400px;
+    height: 225px;
     background: url('images/youtube_2.png') no-repeat 0 0;
-    /*background-attachment:fixed;*/
-    /*background-position:center;*/
-    /*background-position: 0px 0px;*/
 }
 
 #youtube_img:hover {
-/*    background: url('images/youtube_02.png') no-repeat;
-    background-size: contain;*/
     background: url('images/youtube_2.png') no-repeat -400px 0;
 }
 
@@ -1267,11 +1265,7 @@ a {
     *//*text-align: right;*//*
 }*/
 
-#youtube_video {
-    width: 400px;
-    height: 225px;
-    margin: 0 auto;
-}
+
 
 /*####Contacts####*/
 #googlemap {

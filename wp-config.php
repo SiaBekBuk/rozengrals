@@ -16,7 +16,7 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'rozengrals');
+define('DB_NAME', 'rozengral_shop');
 
 /** Имя пользователя MySQL */
 define('DB_USER', 'rozengrals');

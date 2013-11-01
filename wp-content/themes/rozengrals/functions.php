@@ -24,7 +24,9 @@
     }
     add_action('init', 'removeHeadLinks');
     remove_action('wp_head', 'wp_generator');
-    
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+remove_filter( $filter, 'wp_filter_kses' );
+    add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 24;' ), 20 );
     if (function_exists('register_sidebar')) {
     	register_sidebar(array(
     		'name' => 'Sidebar Widgets',
@@ -44,5 +46,11 @@
     foreach ( array( 'term_description' ) as $filter ) {
         remove_filter( $filter, 'wp_kses_data' );
     }
+
+add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');
+
+function custom_default_catalog_orderby() {
+    return 'date'; // Can also use title and price
+}
 
 ?>

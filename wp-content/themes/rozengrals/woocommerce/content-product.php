@@ -41,18 +41,21 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
     <div class="cat-item-name">
         <?php the_title();?>
     </div>
-    <div class="cat-item-cl"></div>
+    <div class="cat-item-cl">
+
+    </div>
     <div class="cat-item-price">
         <?php
             $price = $product->get_price();
             $price_eur = $price/0.702804;
-            echo number_format($price,2,'.',' ').' / '.number_format($price_eur,2,'.',' ');
+            echo number_format($price,2,'.',' ').'/'.number_format($price_eur,2,'.',' ');
 
         ?> </div>
     <div class="item-add-to-basket">
-        <div class="item-add">+</div>
-        <div class="item-added-count">99</div>
-        <div class="item-remove">-</div>
+        <div class="item-add-2"></div>
+    </div>
+    <div class="item-comment clearfix">
+        <?php the_content();?>
     </div>
 </div>
 

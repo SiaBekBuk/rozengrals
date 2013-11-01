@@ -16,7 +16,7 @@ Template Name: WP-Shop
                     <tr>
                         <td>
                             <div class="eur">LVL/EUR</div>
-                            <div  class="menu-cat-content">
+                            <div  class="menu-cat-content"  id ="pl-snacks-and-salads">
                                 <?php
                                 if (is_product_category()) {
                                     global $wp_query;
@@ -44,11 +44,12 @@ Template Name: WP-Shop
                             <?php
                             global $post;
                             $catTerms = get_terms('product_cat', array('hide_empty' => 0,)); ?>
-                            <div id="menu-categories">
+                            <div id="menu-categories2" class="menu-categories">
                                 <ul>
                                     <?php foreach ($catTerms as $catTerm) :
                                         get_term_link($catTerm->slug, 'product_cat');
-                                        echo '<li><a href="' . get_term_link($catTerm->slug, 'product_cat') . '#nav">' . $catTerm->name . '</a></li>';
+
+                                        echo '<li '.($cat->slug==$catTerm->slug?'class="active"':'').'><a href="' . get_term_link($catTerm->slug, 'product_cat') . '#nav">' . $catTerm->name . '</a></li>';
                                     endforeach;
                                     ?>
                                 </ul>

@@ -759,7 +759,7 @@ a {
     height: 100%;
 }
 
-#menu-categories {
+.menu-categories {
     text-align: left;
     font-size: 20px;
     font-family: 'cyrillicgothregular';
@@ -770,17 +770,17 @@ a {
     float: right;
 }
 
-#menu-categories li {
+.menu-categories li {
     list-style: none;
 }
 
-#menu-categories li:hover {
+.menu-categories li:hover {
     color: #e40001;
     cursor: pointer;
     text-decoration: underline;
 }
 
-#menu-categories .active {
+.menu-categories .active {
     color: #e40001;
     text-decoration: underline;
     text-shadow: 0 0 10px rgba(255, 5, 0, 0.27);
@@ -880,7 +880,7 @@ a {
 }
 
 .cat-item-price {
-    width: 110px;
+    width: 130px;
     height: 32px;
     color: #6E2528;
     text-align: center;
@@ -1372,7 +1372,7 @@ a {
     width: 300px;
     position: relative;
     z-index: 1002;
-    top: -169px;
+    top: -145px;
     left: 607px;
     color: #6e0001;
     text-align: right;

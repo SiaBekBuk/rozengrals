@@ -1636,7 +1636,7 @@ Template Name: Menu
 
                         </td>
                         <td style="vertical-align: top;">
-                            <div id="menu-categories">
+                            <div id="menu-categories"  class="menu-categories">
                                 <ul>
                                     <li id="liSalads" class='active'>Закуски и Салаты</li>
                                     <li id="liSoups">Супы</li>

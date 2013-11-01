@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsive Lightbox
 Description: Responsive Lightbox allows users to view larger versions of images and galleries in a lightbox (overlay) effect optimized for mobile devices.
-Version: 1.2.1
+Version: 1.3.0
 Author: dFactory
 Author URI: http://www.dfactory.eu/
 Plugin URI: http://www.dfactory.eu/plugins/responsive-lightbox/
@@ -57,6 +57,7 @@ class Responsive_Lightbox
 			),
 			'swipebox' => array(
 				'animation' => 'css',
+				'force_png_icons' => FALSE,
 				'hide_bars' => TRUE,
 				'hide_bars_delay' => 5000,
 				'video_max_width' => 1080
@@ -87,9 +88,14 @@ class Responsive_Lightbox
 				'margin' => 5,
 				'video_width' => 1080,
 				'video_height' => 720
+			),
+			'nivo' => array(
+				'effect' => 'fade',
+				'keyboard_nav' => TRUE,
+				'error_message' => 'The requested content cannot be loaded. Please try again later.'
 			)
 		),
-		'version' => '1.2.1'
+		'version' => '1.3.0'
 	);
 	private $scripts = array();
 	private $options = array();
@@ -118,23 +124,28 @@ class Responsive_Lightbox
 				update_option('responsive_lightbox_configuration', $array);
 				delete_option('rl_configuration');
 			}
-
-			update_option('responsive_lightbox_version', $this->defaults['version']);
 		}
 
-		if(version_compare(($db_version === FALSE ? '1.0.0' : $db_version), '1.2.0', '<'))
-			update_option('responsive_lightbox_version', $this->defaults['version']);
+		//update plugin version
+		update_option('responsive_lightbox_version', $this->defaults['version'], '', 'no');
 
 		$this->options['settings'] = array_merge($this->defaults['settings'], (($array = get_option('responsive_lightbox_settings')) === FALSE ? array() : $array));
-		$this->options['configuration'] = array_merge($this->defaults['configuration'], (($array = get_option('responsive_lightbox_configuration')) === FALSE ? array() : $array));
+
+		//for multi arrays we have to merge them separately
+		$db_conf_opts = (($base = get_option('responsive_lightbox_configuration')) === FALSE ? array() : $base);
+
+		foreach($this->defaults['configuration'] as $script => $settings)
+		{
+			$this->options['configuration'][$script] = array_merge($settings, (isset($db_conf_opts[$script]) ? $db_conf_opts[$script] : array()));
+		}
 
 		//actions
 		add_action('plugins_loaded', array(&$this, 'load_textdomain'));
 		add_action('plugins_loaded', array(&$this, 'load_defaults'));
 		add_action('admin_init', array(&$this, 'register_settings'));
 		add_action('admin_menu', array(&$this, 'admin_menu_options'));
-		add_action('wp_enqueue_scripts', array(&$this, 'front_comments_scripts_styles'));
-		add_action('admin_enqueue_scripts', array(&$this, 'admin_comments_scripts_styles'));
+		add_action('wp_enqueue_scripts', array(&$this, 'front_scripts_styles'));
+		add_action('admin_enqueue_scripts', array(&$this, 'admin_scripts_styles'));
 
 		//filters
 		add_filter('plugin_action_links', array(&$this, 'plugin_settings_link'), 10, 2);
@@ -147,7 +158,7 @@ class Responsive_Lightbox
 		if($this->options['settings']['videos'] === TRUE)
 			add_filter('the_content', array(&$this, 'add_videos_lightbox_selector'));
 
-		if($this->options['settings']['image_links'] === TRUE)
+		if($this->options['settings']['image_links'] === TRUE || $this->options['settings']['images_as_gallery'] === TRUE)
 			add_filter('the_content', array(&$this, 'add_links_lightbox_selector'));
 	}
 
@@ -309,6 +320,18 @@ class Responsive_Lightbox
 					'inside' => __('inside', 'responsive-lightbox'),
 					'over' => __('over', 'responsive-lightbox')
 				)
+			),
+			'nivo' => array(
+				'name' => __('Nivo Lightbox', 'responsive-lightbox'),
+				'effects' => array(
+					'fade' => __('fade', 'responsive-lightbox'),
+					'fadeScale' => __('fade scale', 'responsive-lightbox'),
+					'slideLeft' => __('slide left', 'responsive-lightbox'),
+					'slideRight' => __('slide right', 'responsive-lightbox'),
+					'slideUp' => __('slide up', 'responsive-lightbox'),
+					'slideDown' => __('slide down', 'responsive-lightbox'),
+					'fall' => __('fall', 'responsive-lightbox')
+				)
 			)
 		);
 
@@ -321,7 +344,8 @@ class Responsive_Lightbox
 			'general-settings' => array(
 				'name' => __('General settings', 'responsive-lightbox'),
 				'key' => 'responsive_lightbox_settings',
-				'submit' => 'save_rl_settings'
+				'submit' => 'save_rl_settings',
+				'reset' => 'reset_rl_settings',
 			),
 			'configuration' => array(
 				'name' => __('Lightbox settings', 'responsive-lightbox'),
@@ -375,7 +399,7 @@ class Responsive_Lightbox
 			$current_blog_id = $wpdb->blogid;
 			$blogs_ids = $wpdb->get_col($wpdb->prepare('SELECT blog_id FROM '.$wpdb->blogs, ''));
 
-			if(($activated_blogs = get_site_option('responsive_lightbox_activated', FALSE, FALSE)) === FALSE)
+			if(($activated_blogs = get_site_option('responsive_lightbox_activated_blogs', FALSE, FALSE)) === FALSE)
 				$activated_blogs = array();
 
 			foreach($blogs_ids as $blog_id)
@@ -434,9 +458,10 @@ class Responsive_Lightbox
 
 		if($this->options['settings']['script'] === 'swipebox')
 		{
-			add_settings_field('rl_sw_animation', __('Animation type', 'responsive-lightbox'), array(&$this, 'rl_sw_animation'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
-			add_settings_field('rl_sw_hide_bars', __('Top and bottom bars', 'responsive-lightbox'), array(&$this, 'rl_sw_hide_bars'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
-			add_settings_field('rl_sw_video_max_width', __('Video max width', 'responsive-lightbox'), array(&$this, 'rl_sw_video_max_width'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_sb_animation', __('Animation type', 'responsive-lightbox'), array(&$this, 'rl_sb_animation'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_sb_force_png_icons', __('Force PNG icons', 'responsive-lightbox'), array(&$this, 'rl_sb_force_png_icons'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_sb_hide_bars', __('Top and bottom bars', 'responsive-lightbox'), array(&$this, 'rl_sb_hide_bars'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_sb_video_max_width', __('Video max width', 'responsive-lightbox'), array(&$this, 'rl_sb_video_max_width'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
 		}
 		elseif($this->options['settings']['script'] === 'prettyphoto')
 		{
@@ -486,6 +511,12 @@ class Responsive_Lightbox
 			add_settings_field('rl_fb_margin', __('Margin', 'responsive-lightbox'), array(&$this, 'rl_fb_margin'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
 			add_settings_field('rl_fb_video_width', __('Video width', 'responsive-lightbox'), array(&$this, 'rl_fb_video_width'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
 			add_settings_field('rl_fb_video_height', __('Video height', 'responsive-lightbox'), array(&$this, 'rl_fb_video_height'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+		}
+		elseif($this->options['settings']['script'] === 'nivo')
+		{
+			add_settings_field('rl_nv_effect', __('Effect', 'responsive-lightbox'), array(&$this, 'rl_nv_effect'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_nv_keyboard_nav', __('Keyboard navigation', 'responsive-lightbox'), array(&$this, 'rl_nv_keyboard_nav'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
+			add_settings_field('rl_nv_error_message', __('Error message', 'responsive-lightbox'), array(&$this, 'rl_nv_error_message'), 'responsive_lightbox_configuration', 'responsive_lightbox_configuration');
 		}
 	}
 
@@ -608,16 +639,16 @@ class Responsive_Lightbox
 	}
 
 
-	public function rl_sw_animation()
+	public function rl_sb_animation()
 	{
 		echo '
-		<div id="rl_sw_animation" class="wplikebtns">';
+		<div id="rl_sb_animation" class="wplikebtns">';
 
 		foreach($this->scripts['swipebox']['animations'] as $val => $trans)
 		{
 			echo '
-			<input id="rl-sw-animation-'.$val.'" type="radio" name="responsive_lightbox_configuration[swipebox][animation]" value="'.esc_attr($val).'" '.checked($val, $this->options['configuration']['swipebox']['animation'], FALSE).' />
-			<label for="rl-sw-animation-'.$val.'">'.$trans.'</label>';
+			<input id="rl-sb-animation-'.$val.'" type="radio" name="responsive_lightbox_configuration[swipebox][animation]" value="'.esc_attr($val).'" '.checked($val, $this->options['configuration']['swipebox']['animation'], FALSE).' />
+			<label for="rl-sb-animation-'.$val.'">'.$trans.'</label>';
 		}
 
 		echo '
@@ -626,21 +657,21 @@ class Responsive_Lightbox
 	}
 
 
-	public function rl_sw_hide_bars()
+	public function rl_sb_hide_bars()
 	{
 		echo '
-		<div id="rl_sw_hide_bars" class="wplikebtns">';
+		<div id="rl_sb_hide_bars" class="wplikebtns">';
 
 		foreach($this->choices as $val => $trans)
 		{
 			echo '
-			<input id="rl-sw-hide-bars-'.$val.'" type="radio" name="responsive_lightbox_configuration[swipebox][hide_bars]" value="'.esc_attr($val).'" '.checked(($val === 'yes' ? TRUE : FALSE), $this->options['configuration']['swipebox']['hide_bars'], FALSE).' />
-			<label for="rl-sw-hide-bars-'.$val.'">'.$trans.'</label>';
+			<input id="rl-sb-hide-bars-'.$val.'" type="radio" name="responsive_lightbox_configuration[swipebox][hide_bars]" value="'.esc_attr($val).'" '.checked(($val === 'yes' ? TRUE : FALSE), $this->options['configuration']['swipebox']['hide_bars'], FALSE).' />
+			<label for="rl-sb-hide-bars-'.$val.'">'.$trans.'</label>';
 		}
 
 		echo '
 			<p class="description">'.__('Disable if you don\'t want to top and bottom bars to be hidden after a period of time.', 'responsive-lightbox').'</p>
-			<div id="rl_sw_hide_bars_delay"'.($this->options['configuration']['swipebox']['hide_bars'] === FALSE ? ' style="display: none;"' : '').'>
+			<div id="rl_sb_hide_bars_delay"'.($this->options['configuration']['swipebox']['hide_bars'] === FALSE ? ' style="display: none;"' : '').'>
 				<input type="text" name="responsive_lightbox_configuration[swipebox][hide_bars_delay]" value="'.esc_attr($this->options['configuration']['swipebox']['hide_bars_delay']).'" />
 				<p class="description">'.__('Enter the time after which the top and bottom bars will be hidden (when hiding is enabled).', 'responsive-lightbox').'</p>
 			</div>
@@ -648,12 +679,30 @@ class Responsive_Lightbox
 	}
 
 
-	public function rl_sw_video_max_width()
+	public function rl_sb_video_max_width()
 	{
 		echo '
-		<div id="rl_sw_video_max_width">
+		<div id="rl_sb_video_max_width">
 			<input type="text" name="responsive_lightbox_configuration[swipebox][video_max_width]" value="'.esc_attr($this->options['configuration']['swipebox']['video_max_width']).'" />
 			<p class="description">'.__('Enter the max video width in a lightbox.', 'responsive-lightbox').'</p>
+		</div>';
+	}
+
+
+	public function rl_sb_force_png_icons()
+	{
+		echo '
+		<div id="rl_sb_force_png_icons" class="wplikebtns">';
+
+		foreach($this->choices as $val => $trans)
+		{
+			echo '
+			<input id="rl-sb-force-png-icons-'.$val.'" type="radio" name="responsive_lightbox_configuration[swipebox][force_png_icons]" value="'.esc_attr($val).'" '.checked(($val === 'yes' ? TRUE : FALSE), $this->options['configuration']['swipebox']['force_png_icons'], FALSE).' />
+			<label for="rl-sb-force-png-icons-'.$val.'">'.$trans.'</label>';
+		}
+
+		echo '
+			<p class="description">'.__('Enable this if you\'re having problems with navigation icons not visible on some devices.', 'responsive-lightbox').'</p>
 		</div>';
 	}
 
@@ -1338,6 +1387,52 @@ class Responsive_Lightbox
 	}
 
 
+	public function rl_nv_effect()
+	{
+		echo '
+		<div id="rl_nv_effect" class="wplikebtns">';
+
+		foreach($this->scripts['nivo']['effects'] as $val => $trans)
+		{
+			echo '
+			<input id="rl-nv-effect-'.$val.'" type="radio" name="responsive_lightbox_configuration[nivo][effect]" value="'.esc_attr($val).'" '.checked($val, $this->options['configuration']['nivo']['effect'], FALSE).' />
+			<label for="rl-nv-effect-'.$val.'">'.$trans.'</label>';
+		}
+
+		echo '
+			<p class="description">'.__('The effect to use when showing the lightbox.', 'responsive-lightbox').'</p>
+		</div>';
+	}
+
+
+	public function rl_nv_keyboard_nav()
+	{
+		echo '
+		<div id="rl_nv_keyboard_nav" class="wplikebtns">';
+
+		foreach($this->choices as $val => $trans)
+		{
+			echo '
+			<input id="rl-nv-keyboard-nav-'.$val.'" type="radio" name="responsive_lightbox_configuration[nivo][keyboard_nav]" value="'.esc_attr($val).'" '.checked(($val === 'yes' ? TRUE : FALSE), $this->options['configuration']['nivo']['keyboard_nav'], FALSE).' />
+			<label for="rl-nv-keyboard-nav-'.$val.'">'.$trans.'</label>';
+		}
+
+		echo '
+			<p class="description">'.__('Enable/Disable keyboard navigation (left/right/escape).', 'responsive-lightbox').'</p>
+		</div>';
+	}
+
+
+	public function rl_nv_error_message()
+	{
+		echo '
+		<div id="rl_nv_error_message">
+			<input type="text" value="'.esc_attr($this->options['configuration']['nivo']['error_message']).'" name="responsive_lightbox_configuration[nivo][error_message]" />
+			<p class="description">'.__('Error message if the content cannot be loaded.', 'responsive-lightbox').'</p>
+		</div>';
+	}
+
+
 	/**
 	 * Validates settings
 	*/
@@ -1365,9 +1460,14 @@ class Responsive_Lightbox
 				//animation
 				$input['swipebox']['animation'] = (isset($input['swipebox']['animation']) && in_array($input['swipebox']['animation'], array_keys($this->scripts['swipebox']['animations'])) ? $input['swipebox']['animation'] : $this->defaults['configuration']['swipebox']['animation']);
 
-				//hide bars
+				//force png icons
+				$input['swipebox']['force_png_icons'] = (isset($input['swipebox']['force_png_icons']) && in_array($input['swipebox']['force_png_icons'], array_keys($this->choices)) ? ($input['swipebox']['force_png_icons'] === 'yes' ? TRUE : FALSE) : $this->defaults['configuration']['swipebox']['force_png_icons']);
+
+				//bars
 				$input['swipebox']['hide_bars'] = (isset($input['swipebox']['hide_bars']) && in_array($input['swipebox']['hide_bars'], array_keys($this->choices)) ? ($input['swipebox']['hide_bars'] === 'yes' ? TRUE : FALSE) : $this->defaults['configuration']['swipebox']['hide_bars']);
 				$input['swipebox']['hide_bars_delay'] = (int)($input['swipebox']['hide_bars_delay'] > 0 ? $input['swipebox']['hide_bars_delay'] : $this->defaults['configuration']['swipebox']['hide_bars_delay']);
+
+				//video width
 				$input['swipebox']['video_max_width'] = (int)($input['swipebox']['video_max_width'] > 0 ? $input['swipebox']['video_max_width'] : $this->defaults['configuration']['swipebox']['video_max_width']);
 			}
 			elseif($this->options['settings']['script'] === 'prettyphoto' && $_POST['script_r'] === 'prettyphoto')
@@ -1507,6 +1607,17 @@ class Responsive_Lightbox
 				//video height
 				$input['fancybox']['video_height'] = (int)($input['fancybox']['video_height'] > 0 ? $input['fancybox']['video_height'] : $this->defaults['configuration']['fancybox']['video_height']);
 			}
+			elseif($this->options['settings']['script'] === 'nivo' && $_POST['script_r'] === 'nivo')
+			{
+				//effect
+				$input['nivo']['effect'] = (isset($input['nivo']['effect']) && in_array($input['nivo']['effect'], array_keys($this->scripts['nivo']['effects'])) ? $input['nivo']['effect'] : $this->defaults['configuration']['nivo']['effect']);
+
+				//keyboard navigation
+				$input['nivo']['keyboard_nav'] = (isset($input['nivo']['keyboard_nav']) && in_array($input['nivo']['keyboard_nav'], array_keys($this->choices)) ? ($input['nivo']['keyboard_nav'] === 'yes' ? TRUE : FALSE) : $this->defaults['configuration']['nivo']['keyboard_nav']);
+
+				//error message
+				$input['nivo']['error_message'] = sanitize_text_field($input['nivo']['error_message']);
+			}
 			else
 			{
 				//clear input to not change settings
@@ -1517,6 +1628,12 @@ class Responsive_Lightbox
 
 			//we have to merge rest of the scripts settings
 			$input = array_merge($this->options['configuration'], $input);
+		}
+		elseif(isset($_POST['reset_rl_settings']))
+		{
+			$input = $this->defaults['settings'];
+
+			add_settings_error('reset_general_settings', 'general_reset', __('Settings restored to defaults.', 'responsive-lightbox'), 'updated');
 		}
 		elseif(isset($_POST['reset_rl_configuration']))
 		{
@@ -1536,7 +1653,13 @@ class Responsive_Lightbox
 			{
 				$input['fancybox'] = $this->defaults['configuration']['fancybox'];
 
-				add_settings_error('reset_prettyphoto_settings', 'prettyphoto_reset', __('Settings of FancyBox script were restored to defaults.', 'responsive-lightbox'), 'updated');
+				add_settings_error('reset_fancybox_settings', 'fancybox_reset', __('Settings of FancyBox script were restored to defaults.', 'responsive-lightbox'), 'updated');
+			}
+			elseif($this->options['settings']['script'] === 'nivo' && $_POST['script_r'] === 'nivo')
+			{
+				$input['nivo'] = $this->defaults['configuration']['nivo'];
+
+				add_settings_error('reset_nivo_settings', 'nivo_reset', __('Settings of Nivo script were restored to defaults.', 'responsive-lightbox'), 'updated');
 			}
 			else
 			{
@@ -1553,7 +1676,7 @@ class Responsive_Lightbox
 
 	public function admin_menu_options()
 	{
-		$watermark_settings_page = add_options_page(
+		add_options_page(
 			__('Responsive Lightbox', 'responsive-lightbox'),
 			__('Responsive Lightbox', 'responsive-lightbox'),
 			'manage_options',
@@ -1594,14 +1717,14 @@ class Responsive_Lightbox
 		submit_button('', 'primary', $this->tabs[$tab_key]['submit'], FALSE);
 
 		echo ' ';
-		echo ($tab_key === 'configuration' ? submit_button(__('Reset to defaults', 'responsive-lightbox'), 'secondary', $this->tabs[$tab_key]['reset'], FALSE) : '');
+		echo submit_button(__('Reset to defaults', 'responsive-lightbox'), 'secondary', $this->tabs[$tab_key]['reset'], FALSE);
 
 		echo '
 					</p>
 				</form>
 			</div>
 			<div class="df-credits postbox-container">
-				<h3 class="metabox-title">'.__('Responsive Lightbox', 'responsive-lightbox').'</h3>
+				<h3 class="metabox-title">'.__('Responsive Lightbox', 'responsive-lightbox').' '.$this->defaults['version'].'</h3>
 				<div class="inner">
 					<h3>'.__('Need support?', 'responsive-lightbox').'</h3>
 					<p>'.__('If you are having problems with this plugin, please talk about them in the', 'responsive-lightbox').' <a href="http://www.dfactory.eu/support/?utm_source=responsive-lightbox-settings&utm_medium=link&utm_campaign=support" target="_blank" title="'.__('Support forum', 'responsive-lightbox').'">'.__('Support forum', 'responsive-lightbox').'</a></p>
@@ -1620,7 +1743,7 @@ class Responsive_Lightbox
 	}
 
 
-	public function admin_comments_scripts_styles($page)
+	public function admin_scripts_styles($page)
 	{
 		if($page === 'settings_page_responsive-lightbox')
 		{
@@ -1636,6 +1759,7 @@ class Responsive_Lightbox
 				'responsive-lightbox-admin',
 				'rlArgs',
 				array(
+					'resetSettingsToDefaults' => __('Are you sure you want to reset these settings to defaults?', 'responsive-lightbox'),
 					'resetScriptToDefaults' => __('Are you sure you want to reset scripts settings to defaults?', 'responsive-lightbox'),
 					'opacity_pp' => $this->options['configuration']['prettyphoto']['opacity'],
 					'opacity_fb' => $this->options['configuration']['fancybox']['overlay_opacity']
@@ -1661,7 +1785,7 @@ class Responsive_Lightbox
 	}
 
 
-	public function front_comments_scripts_styles()
+	public function front_scripts_styles()
 	{
 		$args = array(
 			'script' => $this->options['settings']['script'],
@@ -1732,12 +1856,20 @@ class Responsive_Lightbox
 			$args = array_merge(
 				$args,
 				array(
-					'animation' => ($this->options['configuration']['swipebox']['animation'] === 'css' ? TRUE : FALSE),
+					'animation' => $this->getBooleanValue(($this->options['configuration']['swipebox']['animation'] === 'css' ? TRUE : FALSE)),
 					'hideBars' => $this->getBooleanValue($this->options['configuration']['swipebox']['hide_bars']),
 					'hideBarsDelay' => $this->options['configuration']['swipebox']['hide_bars_delay'],
 					'videoMaxWidth' => $this->options['configuration']['swipebox']['video_max_width']
 				)
 			);
+
+			if($this->options['configuration']['swipebox']['force_png_icons'] === TRUE)
+			{
+				wp_add_inline_style(
+					'responsive-lightbox-swipebox-front',
+					'#swipebox-action #swipebox-prev, #swipebox-action #swipebox-next, #swipebox-action #swipebox-close { background-image: url('.plugins_url('assets/swipebox/source/img/icons.png' , __FILE__).') !important; }'
+				);
+			}
 		}
 		elseif($this->options['settings']['script'] === 'fancybox')
 		{
@@ -1787,6 +1919,39 @@ class Responsive_Lightbox
 				)
 			);
 		}
+		elseif($this->options['settings']['script'] === 'nivo')
+		{
+			wp_register_script(
+				'responsive-lightbox-nivo',
+				plugins_url('assets/nivo/nivo-lightbox.min.js', __FILE__),
+				array('jquery')
+			);
+
+			wp_enqueue_script('responsive-lightbox-nivo');
+
+			wp_register_style(
+				'responsive-lightbox-nivo-front',
+				plugins_url('assets/nivo/nivo-lightbox.css', __FILE__)
+			);
+
+			wp_enqueue_style('responsive-lightbox-nivo-front');
+
+			wp_register_style(
+				'responsive-lightbox-nivo-front-template',
+				plugins_url('assets/nivo/themes/default/default.css', __FILE__)
+			);
+
+			wp_enqueue_style('responsive-lightbox-nivo-front-template');
+
+			$args = array_merge(
+				$args,
+				array(
+					'effect' => $this->options['configuration']['nivo']['effect'],
+					'keyboardNav' => $this->getBooleanValue($this->options['configuration']['nivo']['keyboard_nav']),
+					'errorMessage' => esc_attr($this->options['configuration']['nivo']['error_message'])
+				)
+			);
+		}
 
 		wp_register_script(
 			'responsive-lightbox-front',
@@ -1796,6 +1961,11 @@ class Responsive_Lightbox
 
 		wp_enqueue_script('responsive-lightbox-front');
 
+		wp_add_inline_style(
+			'responsive-lightbox-swipebox',
+			'#swipebox-action #swipebox-close, #swipebox-action #swipebox-prev, #swipebox-action #swipebox-next { background-image: url(\'assets/swipebox/source/img/icons.png\') !important; }'
+		);
+
 		wp_localize_script(
 			'responsive-lightbox-front',
 			'rlArgs',
@@ -1804,6 +1974,9 @@ class Responsive_Lightbox
 	}
 
 
+	/**
+	 * 
+	*/
 	private function getBooleanValue($option)
 	{
 		return ($option === TRUE ? 1 : 0);

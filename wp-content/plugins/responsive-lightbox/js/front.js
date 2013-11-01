@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	$(document).on('ready ajaxComplete', function() {
 		if(rlArgs.script === 'swipebox') {
 			$('a[rel*="'+rlArgs.selector+'"]').swipebox({
-				useCSS: rlArgs.animation,
+				useCSS: (rlArgs.animation === '1' ? true : false),
 				hideBarsDelay: (rlArgs.hideBars === '1' ? parseInt(rlArgs.hideBarsDelay) : 0),
 				videoMaxWidth: parseInt(rlArgs.videoMaxWidth)
 			});
@@ -62,6 +62,20 @@ jQuery(document).ready(function($) {
 				margin: parseInt(rlArgs.margin),
 				width: parseInt(rlArgs.videoWidth),
 				height: parseInt(rlArgs.videoHeight)
+			});
+		} else if(rlArgs.script === 'nivo') {
+			$.each($('a[rel*="'+rlArgs.selector+'"]'), function() {
+				var match = $(this).attr('rel').match(new RegExp(rlArgs.selector+'\\[(gallery\\-(?:[\\da-z]{1,4}))\\]', 'ig'));
+
+				if(match !== null) {
+					$(this).attr('data-lightbox-gallery', match[0]);
+				}
+			});
+
+			$('a[rel*="'+rlArgs.selector+'"]').nivoLightbox({
+				effect: rlArgs.effect,
+				keyboardNav: (rlArgs.keyboardNav === '1' ? true : false),
+				errorMessage: rlArgs.errorMessage,
 			});
 		}
 	});

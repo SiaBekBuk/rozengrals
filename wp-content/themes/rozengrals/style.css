@@ -413,7 +413,8 @@ body:after {
 }
 
 a {
-    color: #6e0001 !important;
+    color: #660000;
+    cursor:pointer;
 }
 
 .clearfix {
@@ -525,15 +526,20 @@ a {
 }
 
 /*Header Menu*/
+/*#menu-main{
+    margin:0 auto;
+}*/
+
 #nav {
     width: 100%;
     height: 41px;
     position: relative;
     z-index: 1003;
+    top: 10px;
 }
 
 #nav .menu-main-container {
-    width: 800px;
+    width: 827px;
     height: 41px;
     margin: 0 auto;
 }
@@ -549,7 +555,7 @@ a {
 }
 
 #nav li {
-    width: 128px;
+    width: 135px;
     height: 41px;
     text-align: center;
     vertical-align: middle;
@@ -558,26 +564,27 @@ a {
 
 #nav li a, #nav li a:hover {
     text-decoration: none;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: normal;
     font-family: 'cyrillicgothregular';
 }
 
 #nav li a {
     display: block;
-    color: #6e0001;
+    color: #660000;
     width: 100%;
     height: 100%;
-    text-shadow: 0 0 25px #fffeec;
+    /*text-shadow: 0 0 25px #fffeec;*/
 }
 
 #nav li a:hover {
     text-shadow: 0 0 10px #fffeec;
-    color: #a60001;
+    color: #ae0001;
 }
 
 #nav .current-menu-item a {
     color: #ae0001 !important;
+    text-shadow: 0 0 10px #fffeec;
 }
 
 #nav li:hover {
@@ -589,8 +596,9 @@ a {
     width: 80%;
     margin: 0 auto;
     border-top: 1px solid #4b0001;
-    background: rgba(237, 98, 0, 0.38);
-    height: 1px;
+    border-bottom: rgba(198, 89, 0, 0.71);
+    /*background: rgba(198, 89, 0, 0.71);*/
+    height: 0px;
     /*border : 0;*/
     /*height : 20px;*/
     /*background : url(images/menu_hr.png)  no-repeat;*/
@@ -607,7 +615,7 @@ a {
     padding: 230px 150px 50px 50px;
     font: 18px/1.4 Georgia, Serif;
     text-align: justify;
-    color: #321900;
+    /*color: #321900;*/
     margin: 0 auto;
     position: relative;
     z-index: 1000;
@@ -742,13 +750,14 @@ a {
 /*#### Edienkarte #############################################################*/
 
 #edienkarte {
-    background: url('images/menu-content-bg-02.png') no-repeat;
-    background-size: 975px 825px;
+/*    background: url('images/menu-content-bg-02.png') no-repeat;
+    background-size: 975px 825px;*/
     width: 975px;
     height: 825px;
     min-height: 700px;
     margin-left: -55px;
     margin-top: -40px;
+    color:#660000;
 }
 
 #edienkarte table {
@@ -763,27 +772,29 @@ a {
     text-align: left;
     font-size: 20px;
     font-family: 'cyrillicgothregular';
-    color: #951A26;
     margin-top: 113px;
-    /*margin-left: 30px;*/
     width: 192px;
     float: right;
 }
 
 .menu-categories li {
     list-style: none;
+    /*color: #42110e;*/
+    margin-top: 10px;
 }
 
 .menu-categories li:hover {
-    color: #e40001;
+    color: #ae0001;
     cursor: pointer;
-    text-decoration: underline;
+    text-shadow: 0 0 10px #fffeec;
+    /*text-decoration: underline;*/
 }
 
 .menu-categories .active {
-    color: #e40001;
-    text-decoration: underline;
-    text-shadow: 0 0 10px rgba(255, 5, 0, 0.27);
+    color: #ae0001;
+    /*text-decoration: underline;*/
+    /*text-shadow: 0 0 10px rgba(255, 5, 0, 0.27);*/
+    text-shadow: 0 0 10px #fffeec;
 }
 
 .menu-cat-content {
@@ -827,13 +838,13 @@ a {
 }
 
 .eur {
-    color: #6E2528;
+    /*color: #6E2528;*/
     font-family: "Times New Roman", serif;
     font-weight: bold;
     position: relative;
     top: 119px;
-    left: 509px;
-    width: 85px;
+    left: 518px;
+    width: 90px;
 }
 
 .menu-items {
@@ -882,35 +893,87 @@ a {
 .cat-item-price {
     width: 130px;
     height: 32px;
-    color: #6E2528;
+    /*color: #6E2528;*/
     text-align: center;
     font-size: 20px;
 }
-
-.item-add-to-basket {
+/*////////ADD#TO#BASKET//////////////////////////*/
+/*.item-add-to-basket {
     width: 70px;
-    height: 32px;
-    /*background: rgba(250, 234, 215, 0.63);*/
+    height: 40px;
+    *//*background: rgba(250, 234, 215, 0.63);*//*
+    border:1px solid gray;
 }
 
 .item-add-to-basket div {
-    display: inline-block;
+    *//*display: inline-block;*//*
     text-align: center;
     font-weight: bold;
     font-size: 22px;
-}
-
-.item-add, .item-remove {
-    width: 19px;
-    height: 32px;
-    cursor: pointer;
-    color: #8c0001;
+    float:none !important;
 }
 
 .item-added-count {
     width: 30px;
-    height: 32px;
+    height: 100%;
+    display: inline-block;
 }
+
+.item-add, .item-remove {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    color: #8c0001;
+}*/
+
+
+
+
+.item-add-to-basket{
+    height:32px;
+    width:70px;
+    /*border:1px solid gray;*/
+}
+
+    .item-added-count{
+        height:100%;
+        width:32px;
+        text-align: center;
+        font-size: 27px !important;
+        line-height: 1.1;
+    }
+
+    .item-count-control{
+        width:16px;
+        height:32px;
+        margin-left:3px;
+    }
+
+    .item-count-control div{
+        clear:both;
+        vertical-align: top;
+        text-align: center;
+        line-height: 0.5;
+        cursor:pointer;
+        font-size: 24px;
+    }
+
+        .item-add, .item-remove{
+            width:16px;
+            height:16px;
+            /*border:1px solid gray;*/
+        }
+
+        .item-add{
+            line-height: 0.7 !important;
+        }
+
+        .item-remove{
+            font-size: 46px !important;
+            line-height: 0.2 !important;
+        }
+
+/*///////////////////////////////////////////*/
 
 .item-add-2 {
     width: 27px;
@@ -955,6 +1018,7 @@ a {
     font-weight: bold;
     margin-left: 33px;
     cursor: help;
+    color:#42110e;
 }
 
 .item-small-comment {
@@ -972,9 +1036,9 @@ a {
     margin-top: 55px;
 }
 
-#pl-snacks-and-salads {
+/*#pl-snacks-and-salads {
     color: #006435;
-}
+}*/
 
 #snack-first {
     background: url('images/zakuski.png') no-repeat;
@@ -990,17 +1054,17 @@ a {
     height: 97px;
 }
 
-#pl-snacks-and-salads .item-comment {
+/*#pl-snacks-and-salads .item-comment {
     color: #6E2528;
-}
+}*/
 
-#pl-soups {
+/*#pl-soups {
     color: #951A26;
-}
+}*/
 
-#pl-soups .item-comment {
+/*#pl-soups .item-comment {
     color: #00592E;
-}
+}*/
 
 #soups-first {
     background: url('images/soups_first.png') no-repeat;
@@ -1009,13 +1073,13 @@ a {
     height: 97px;
 }
 
-#pl-fish {
+/*#pl-fish {
     color: #00367B;
-}
+}*/
 
-#pl-fish .item-comment {
+/*#pl-fish .item-comment {
     color: #6E2528;
-}
+}*/
 
 #fish-first {
     background: url('images/fish_first.png') no-repeat;
@@ -1024,9 +1088,9 @@ a {
     height: 97px;
 }
 
-#pl-garnish {
+/*#pl-garnish {
     color: #00592E;
-}
+}*/
 
 #garnish-first {
     background: url('images/garnish_first.png') no-repeat;
@@ -1035,13 +1099,13 @@ a {
     height: 97px;
 }
 
-#pl-meat {
+/*#pl-meat {
     color: #951A26;
-}
+}*/
 
-#pl-meat .item-comment {
+/*#pl-meat .item-comment {
     color: #00592E;
-}
+}*/
 
 #meat-first {
     background: url('images/meat_first.png') no-repeat;
@@ -1050,13 +1114,13 @@ a {
     height: 97px;
 }
 
-#pl-vegetarian {
+/*#pl-vegetarian {
     color: #00592E;
-}
+}*/
 
-#pl-vegetarian .item-comment {
+/*#pl-vegetarian .item-comment {
     color: #6E2528;
-}
+}*/
 
 #vegetarian-first {
     background: url('images/vegetarian_first.png') no-repeat;
@@ -1065,13 +1129,13 @@ a {
     height: 97px;
 }
 
-#pl-desserts, #pl-hot-drinks {
+/*#pl-desserts, #pl-hot-drinks {
     color: #00367B;
-}
+}*/
 
-#pl-desserts .item-comment {
+/*#pl-desserts .item-comment {
     color: #6E2528;
-}
+}*/
 
 #desserts-first {
     background: url('images/desserts_first.png') no-repeat;
@@ -1087,13 +1151,13 @@ a {
     height: 97px;
 }
 
-#pl-drinks {
+/*#pl-drinks {
     color: #00592E;
-}
+}*/
 
-#pl-drinks .item-comment {
+/*#pl-drinks .item-comment {
     color: #6E2528;
-}
+}*/
 
 #drinks-first {
     background: url('images/drinks_first.png') no-repeat;
@@ -1109,13 +1173,13 @@ a {
     height: 97px;
 }
 
-#pl-beer-and-snacks {
+/*#pl-beer-and-snacks {
     color: #6E2528;
-}
+}*/
 
-#pl-beer-and-snacks .item-small-comment {
+/*#pl-beer-and-snacks .item-small-comment {
     color: #B01116;
-}
+}*/
 
 #beer-first {
     background: url('images/beer_first.png') no-repeat;
@@ -1131,9 +1195,9 @@ a {
     height: 97px;
 }
 
-#pl-champagne {
+/*#pl-champagne {
     color: #00592E;
-}
+}*/
 
 #pl-champagne .cat-text {
     font-size: 26px;
@@ -1159,9 +1223,9 @@ a {
     height: 97px;
 }
 
-#pl-white-wine, #additional-white-wine {
+/*#pl-white-wine, #additional-white-wine {
     color: #00367B;
-}
+}*/
 
 #pl-white-wine .cat-item,
 #additional-white-wine .cat-item,

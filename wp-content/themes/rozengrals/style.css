@@ -414,7 +414,14 @@ body:after {
 
 a {
     color: #660000;
-    cursor:pointer;
+}
+
+a:hover, .active a {
+    color:#ae0001 !important;
+}
+
+a.active{
+
 }
 
 .clearfix {
@@ -596,9 +603,9 @@ a {
     width: 80%;
     margin: 0 auto;
     border-top: 1px solid #4b0001;
-    border-bottom: rgba(198, 89, 0, 0.71);
-    /*background: rgba(198, 89, 0, 0.71);*/
-    height: 0px;
+    border-bottom: none !important;
+    background: rgb(226, 145, 48);
+    height: 1px;
     /*border : 0;*/
     /*height : 20px;*/
     /*background : url(images/menu_hr.png)  no-repeat;*/

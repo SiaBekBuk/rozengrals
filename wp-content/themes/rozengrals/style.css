@@ -37,7 +37,7 @@ Version: 1
 
         /*W3C Markup, IE10 Release Preview */
         background-image: linear-gradient(to top left, #B02723 0%, #4F1110 100%);
-
+        color: #42110e;
     }
 
     .screen-reader-text {
@@ -323,7 +323,7 @@ Version: 1
         word-spacing: 1.1pt;
         letter-spacing: 0.2pt;
         font-family: Garamond, "Times New Roman", serif;
-        color: #000;
+        color: #42110e !important;
         background: none;
         font-size: 12pt;
     }
@@ -407,21 +407,13 @@ Version: 1
 
 /* END print media */
 
-body:after {
-    display: none;
-    content: url(images/bg_papirus_header.png) url(images/main_picture.png) url(images/bg_papirus_footer.png) url(images/bg_papirus_middle.png) url(images/logo.png);
-}
 
 a {
     color: #660000;
 }
 
 a:hover, .active a {
-    color:#ae0001 !important;
-}
-
-a.active{
-
+    color:#ae0001;
 }
 
 .clearfix {
@@ -470,8 +462,19 @@ a.active{
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    /*top:45px;*/
+    top:0px;
     z-index: 1001;
+}
+
+#anno{
+    background: url(images/anno.png) no-repeat;
+    background-size: contain;
+    width: 152px;
+    height:44px;
+    position:relative;
+    top:0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #bg-mid {
@@ -810,7 +813,7 @@ a.active{
     height: 100%;
     position: relative;
     top: 60px;
-    left: 1px;
+    left: 10px;
     font-family: 'cyrillicgothregular';
 }
 
@@ -850,7 +853,7 @@ a.active{
     font-weight: bold;
     position: relative;
     top: 119px;
-    left: 518px;
+    left: 523px;
     width: 90px;
 }
 
@@ -890,6 +893,7 @@ a.active{
     width: 21px;
     height: 16px;
     font-family: "Times New Roman", sans-serif;
+
     font-style: italic;
     font-size: 12px !important;
     font-weight: bold;
@@ -1020,6 +1024,7 @@ a.active{
 
 .item-comment {
     font-family: "Times New Roman", sans-serif;
+    /*font: 14px/1.4 Georgia, Serif;*/
     font-style: italic;
     font-size: 14px !important;
     font-weight: bold;
@@ -1031,6 +1036,7 @@ a.active{
 .item-small-comment {
     color: #6E2528;
     font-family: "Times New Roman", sans-serif;
+
     font-style: italic;
     font-size: 14px !important;
     font-weight: bold;
@@ -1424,10 +1430,13 @@ a.active{
 
 #footer-nav li {
     list-style: none;
+
 }
 
-#footer-nav li:hover {
-    /*color:#333;*/
+#footer-nav li a:hover,#footer-nav .current-menu-item {
+    color: #ae0001 !important;
+    text-shadow: 0 0 10px #fffeec;
+    text-decoration: none !important;
 }
 
 #copyright {
@@ -1436,7 +1445,7 @@ a.active{
     top: 15px;
     width: 150px;
     margin: 0 auto;
-    color: #6e0001;
+    color: #660000;
 }
 
 #footer-info {
@@ -1445,7 +1454,7 @@ a.active{
     z-index: 1002;
     top: -145px;
     left: 607px;
-    color: #6e0001;
+    color: #660000;
     text-align: right;
     font-size: 17px;
 }

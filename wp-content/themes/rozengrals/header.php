@@ -74,7 +74,9 @@
             <div id="logo"></div>
         </a>
 
-        <div id="main-picture"></div>
+        <div id="main-picture">
+            <div id="anno"></div>
+        </div>
         <div id="langbar">
             <!--                <a href="#">Lv</a>
                             <a href="#">Ru</a>

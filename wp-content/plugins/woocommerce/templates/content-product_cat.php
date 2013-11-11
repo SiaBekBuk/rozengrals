@@ -1,4 +1,3 @@
-aaaa
 <?php
 /**
  * The template for displaying product category thumbnails within loops.

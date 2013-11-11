@@ -66,9 +66,6 @@
 <div id="page-wrap">
     <div id="top-shadow"></div>
     <div id="header">
-        <!--			<h1><a href="--><?php //echo get_option('home'); ?><!--/">-->
-        <?php //bloginfo('name'); ?><!--</a></h1>-->
-        <!--			<div class="description">--><?php //bloginfo('description'); ?><!--</div>-->
 
         <a href="<?php echo get_option('home'); ?>/" id="main-logo-link">
             <div id="logo"></div>
@@ -78,10 +75,7 @@
             <div id="anno"></div>
         </div>
         <div id="langbar">
-            <!--                <a href="#">Lv</a>
-                            <a href="#">Ru</a>
-                            <a href="#">En</a>
-                            <a href="#">De</a>-->
+
             <div id="flag-lv"></div>
             <div id="flag-ru"></div>
             <div id="flag-en"></div>

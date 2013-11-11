@@ -1640,6 +1640,18 @@ Template Name: Menu
 
     </td>
     <td style="vertical-align: top;">
+
+        <div id="cart">
+            <div id="cart-header">Корзина</div>
+            <div id="cart-item-count">Количество покупок: <span>5</span></div>
+            <div id="cart-sum">Сумма к оплате: <span>55Ls</span></div>
+            <div id="cart-to-reservation">
+                <a href="" id="cart-reserv-btnx" class="btnx">
+                    Перейти к резервации
+                </a>
+            </div>
+        </div>
+
         <div id="menu-categories" class="menu-categories">
             <ul>
                 <li id="liSalads" class='active'>Закуски и Салаты</li>

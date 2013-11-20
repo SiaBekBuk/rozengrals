@@ -685,7 +685,7 @@ a:hover, .active a {
 
 /*......SOUVENIRS......*/
 #souvenirs {
-    width:870px;
+    width:900px;
     height:auto;
     font: 18px/1.4 Georgia, Serif;
     text-align: justify;
@@ -696,17 +696,60 @@ a:hover, .active a {
     display: inline-block;
 }
 
-.souvenirs-text{
+#music-cd-text{
     color:#42110e;
+    width:300px;
+}
+
+#music-cd{
+    margin-bottom: 20px;
+    height:470px;
+}
+
+#music-cd-left{
+    width:315px;
+}
+
+#music-cd-left, #tracklist{
+    float:left;
+}
+
+#music-cd .souvenirs-content{
+    /*margin-left: -15px;*/
 }
 
 #music-cd-cover{
-    background: url(images/rozen_cd_opti_512.png) no-repeat;
-    background-size: contain;
-    width:400px;
-    height:400px;
-    border-radius: 5px;
+    /*background: url(images/rozen_cd_opti_512.png) no-repeat;*/
+    /*background-size: contain;*/
+    /*width:400px;*/
+    /*height:371px;*/
+    /*border-radius: 5px;*/
+    margin-top: 8px;
 }
+
+#tracklist{
+    font-family:  'cyrillicgothregular';
+    font-size: 17px;
+    width: 565px;
+    height: 371px;
+}
+
+#rozen-coins{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 300px;
+}
+
+#img-coins, #coins-text{
+    float:left;
+}
+
+#coins-text {
+    color:#42110e;
+    width: 630px;
+    margin-left:10px;
+}
+
 
 /*####EndOfMainContent*/
 /* #### GALLERY ####*/

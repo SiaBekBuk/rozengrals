@@ -32,8 +32,12 @@ Template Name: Menu
                 <div class="item-add-to-basket">
                     <div class="item-added-count">23</div>
                     <div class="item-count-control">
-                        <div class="item-add">+</div>
-                        <div class="item-remove">-</div>
+                        <a href=""></a>
+<!--                        <input type="button" class="item-add" value="+" />
+                        <input type="button" class="item-remove" value="-" />-->
+<!--                        <i class="icon-plus"></i>-->
+                       <div class="item-add" title="Добавить">+</div>
+                        <div class="item-remove" title="Убрать">-</div>
                     </div>
                 </div>
 

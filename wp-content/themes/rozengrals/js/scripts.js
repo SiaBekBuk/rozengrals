@@ -121,3 +121,4 @@ jQuery(function () {
 jQuery('#datetime').datetimepicker().on('changeDate', function () {
     jQuery('#datetime').datetimepicker('hide');
 });
+

@@ -67,6 +67,9 @@
     <div id="top-shadow"></div>
     <div id="header">
 
+        <div id="gerb-left"></div>
+        <div id="gerb-right"></div>
+
         <a href="<?php echo get_option('home'); ?>/" id="main-logo-link">
             <div id="logo"></div>
         </a>

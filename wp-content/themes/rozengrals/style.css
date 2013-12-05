@@ -494,6 +494,8 @@ a:hover, .active a {
     float: right;
     margin-top: -400px;
     margin-right: 55px;
+    position: relative;
+    z-index: 1001;
 }
 
 #langbar #flag-lv, #langbar #flag-ru, #langbar #flag-en, #langbar #flag-de {
@@ -1162,13 +1164,21 @@ a:hover, .active a {
             /*border:1px solid gray;*/
         }
 
+        .item-add:hover, .item-remove:hover{
+            color:#ae0001;
+        }
+
         .item-add{
             line-height: 0.7 !important;
+            position:relative;
+            z-index: 101;
         }
 
         .item-remove{
             font-size: 46px !important;
             line-height: 0.2 !important;
+            position:relative;
+            z-index: 100;
         }
 
 /*///////////////////////////////////////////*/
@@ -1644,11 +1654,17 @@ a:hover, .active a {
 }
 
 /*####ContactForm####*/
-#divContactForm {
+#divReservationForm {
     width: 100%;
-    height: 300px;
+    height: 500px;
     margin-top: 20px;
     text-align: center;
+}
+
+#reserv-header{
+    color: #42110e;
+    font-family: 'cyrillicgothregular';
+    font-size:28px;
 }
 
 .cftbx {
@@ -1660,6 +1676,7 @@ a:hover, .active a {
     width: 260px;
     margin: 30px;
     vertical-align: top;
+    margin-left: 0px;
 }
 
 #contactform {
@@ -1672,16 +1689,27 @@ a:hover, .active a {
     width: 800px;
 }
 
+#reservation-desc,#reserv-help{
+    color: #42110e;
+    font: 18px/1.4 Georgia, Serif;
+    text-align: center;
+}
+
+#reserv-help{
+    font-size: 16px;
+    text-align: center;
+}
+
 #contactform, #reservation-form {
     margin: 0 auto;
-    background: rgba(188, 84, 0, 0.51);
-    -webkit-border-radius: 20px;
+    /*background: rgba(188, 84, 0, 0.51);*/
+/*    -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     -icab-border-radius: 20px;
     -moz-border-radius: 20px;
-    -ms-border-radius: 20px; /* IE8 */
+    -ms-border-radius: 20px; *//* IE8 *//*
     -o-border-radius: 20px;
-    border-radius: 20px;
+    border-radius: 20px;*/
 }
 
 #contactform input[type="text"], #reservation-form input[type="text"], #message, #reserv-message {
@@ -1709,8 +1737,8 @@ a:hover, .active a {
 }
 
 #reserv-message {
-    width: 390px;
-    height: 206px;
+    width: 400px;
+    height: 256px;
     border: 1px solid rgba(198, 86, 0, 0.75);
 }
 
@@ -1721,24 +1749,52 @@ a:hover, .active a {
 }
 
 #btnSubmit {
+    font-family: 'cyrillicgothregular';
+    font-size:18px;
     position: relative;
-    top: 225px;
+    top: 300px;
     right: 20px;
     border: none;
     background: none;
-    border-bottom: 1px dotted #d5e7e5;
-    color: #d5e7e5;
+    border-bottom: 1px dotted #660000;
+    color: #660000;
+    text-shadow:none;
+    box-shadow:none;
+    border-radius: 0px;
 }
 
 #btnSubmit:hover {
-    border-bottom: 1px solid #d5e7e5;
-    color: #d5e7e5;
+    border-bottom: 1px dotted #ae0001;
+    color: #ae0001;
 }
 
 
 
 
+#gerb-left{
+    display: none;
 
+    background: url(images/left_line.png) no-repeat;
+    background-size: contain;
+    width: 198px;
+    height: 945px;
+    position: absolute;
+    top:20px;
+    left:-13px;
+}
+
+#gerb-right{
+    display: none;
+
+    background: url(images/right_line.png) no-repeat;
+    background-size: contain;
+    width: 175px;
+    height: 1058px;
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    z-index: 1001;
+}
 
 
 

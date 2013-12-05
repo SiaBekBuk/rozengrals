@@ -14,10 +14,11 @@ Template Name: Contacts
                 </div>
             <?php endwhile; endif; ?>
 
-            <!--            <div id="googlemap">-->
-            <!--                <iframe width="800" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?vpsrc=6&amp;ctz=-120&amp;ie=UTF8&amp;msa=0&amp;msid=212996677177251629188.0004b2a377acd438c38c8&amp;t=m&amp;ll=56.94886,24.106343&amp;spn=0.005851,0.008562&amp;z=16&amp;output=embed"></iframe>-->
-            <!--            </div>-->
-
+            <div id="contact-desc">
+                <h2>Добро пожаловать в <span class="gothic-latin">Rozengrāls</span>!</h2>
+               <strong>Н</strong>аш ресторан располагается в самом центре Старой Риги в помещениях, которые уже в 1293 году упоминаются в манускриптах, как самый древний винный погреб и место проведення торжеств Рижской ратуши!
+            </div>
+<br/>
             <table style="width:800px; margin:0 auto;">
                 <tr>
                     <td style="width:400px;">
@@ -31,7 +32,7 @@ Template Name: Contacts
                     </td>
                     <td style="width:400px;">
                         <div id="googlemap">
-                            <iframe width="330" height="230" frameborder="0" scrolling="no" marginheight="0"
+                            <iframe width="360" height="230" frameborder="0" scrolling="no" marginheight="0"
                                     marginwidth="0"
                                     src="http://maps.google.com/maps/ms?vpsrc=6&amp;ctz=-120&amp;ie=UTF8&amp;msa=0&amp;msid=212996677177251629188.0004b2a377acd438c38c8&amp;t=m&amp;ll=56.94886,24.106343&amp;spn=0.005851,0.008562&amp;z=16&amp;output=embed"></iframe>
                             <div id="googlemap-link"><a
@@ -42,9 +43,11 @@ Template Name: Contacts
                 </tr>
             </table>
 
-            <div id="divContactForm">
-                <span>Задайте нам вопрос</span>
-
+            <div id="div-contactform">
+                <span id="contactform-header">Задайте нам вопрос</span>
+                <div id="contact-desc">
+                    При помощи этой формы Вы можете задать нам любой интересующий Вас вопрос!
+                </div>
                 <form id="contactform" name="contactform" method="post"
                       action="" class="contactform"
                       enctype="multipart/form-data">
@@ -56,7 +59,7 @@ Template Name: Contacts
                     <div id="cftbx2" class="cftbx">
                         <textarea id="message" tabindex="4" name="message" cols="60" rows="7" required></textarea>
                     </div>
-                    <input type="submit" value="Отослать" tabindex="5" id="btnSubmit" name="btnSubmit"/>
+                    <input type="submit" value="Отослать" tabindex="5" id="btn-contactform-submit" name="btnSubmit"/>
                 </form>
             </div>
 

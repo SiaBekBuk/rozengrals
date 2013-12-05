@@ -38,6 +38,7 @@ Version: 1
         /*W3C Markup, IE10 Release Preview */
         background-image: linear-gradient(to top left, #B02723 0%, #4F1110 100%);
         color: #42110e;
+        /*cursor:url('images/cursors/sword/Sword.cur'),auto;*/
     }
 
     .screen-reader-text {
@@ -295,8 +296,16 @@ Version: 1
     form {
     }
 
-    input[type=text] {
+    input[type=text],textarea {
+        /*cursor:url('images/cursors/sword/Sword-Text.cur'),auto;*/
     }
+
+    li:hover,a,a:hover, button, input[type=submit],button[type=submit] {
+        /*cursor:url('images/cursors/sword/Sword-Prevcion.cur'),auto;*/
+    }
+/*    button,input[type=submit]{
+        cursor:url('images/cursors/sword/glove.cur'),auto;
+    }*/
 
     textarea {
     }
@@ -410,10 +419,13 @@ Version: 1
 
 a {
     color: #660000;
+    /*cursor:url('images/cursors/sword/Sword-Prevcion.cur'),auto;*/
 }
 
 a:hover, .active a {
     color:#ae0001;
+    /*cursor:url('images/cursors/sword/Sword-Prevcion.cur'),auto;*/
+    cursor: pointer;
 }
 
 .clearfix {
@@ -980,7 +992,7 @@ a:hover, .active a {
 
 .menu-categories li:hover {
     color: #ae0001;
-    cursor: pointer;
+    cursor:pointer;
     text-shadow: 0 0 10px #fffeec;
     /*text-decoration: underline;*/
 }
@@ -1533,10 +1545,6 @@ a:hover, .active a {
     font: 18px/1.4 Georgia, Serif;
 }
 
-#divReservationForm {
-    text-align: center;
-}
-
 /*#fsReservation input[type="text"]{
     float:right;
     width:250px;
@@ -1549,8 +1557,8 @@ a:hover, .active a {
 
 /*####Contacts####*/
 #googlemap {
-    width: 350px;
-    height: 260px;
+    width: 360px;
+    height: 240px;
     margin: 0 auto;
     padding: 10px;
     background: rgba(165, 95, 12, 0.55);
@@ -1581,6 +1589,49 @@ a:hover, .active a {
 #contacts-info p {
     vertical-align: top;
     margin-right: 10px;
+}
+
+#contact-desc {
+    color: #42110e;
+    font: 18px/1.4 Georgia, Serif;
+    text-align: center;
+}
+
+#contactform-header,#contact-desc h2{
+    color: #42110e;
+    font-family: 'cyrillicgothregular';
+    font-size: 28px;
+}
+
+.gothic-latin{
+    font-family: 'old_londonregular';
+}
+
+#div-contactform{
+    text-align: center;
+    height:380px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#btn-contactform-submit{
+    font-family: 'cyrillicgothregular';
+    font-size: 18px;
+    position: relative;
+    top: 215px;
+    right: -20px;
+    border: none;
+    background: none;
+    border-bottom: 1px dotted #660000;
+    color: #660000;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+#btn-contactform-submit:hover{
+    border-bottom: 1px dotted #ae0001;
+    color: #ae0001;
 }
 
 /*####EndOfContacts####*/
@@ -1656,7 +1707,7 @@ a:hover, .active a {
 /*####ContactForm####*/
 #divReservationForm {
     width: 100%;
-    height: 500px;
+    height: 600px;
     margin-top: 20px;
     text-align: center;
 }

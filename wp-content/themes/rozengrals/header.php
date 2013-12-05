@@ -49,6 +49,10 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/CyrillicGoth/stylesheet.css" type="text/css"
           media="all"/>
 
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/old_london/stylesheet.css" type="text/css"
+          media="all"/>
+
+
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/datetimepicker.css" type="text/css"
           media="all"/>
 

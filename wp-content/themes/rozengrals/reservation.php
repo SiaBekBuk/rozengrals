@@ -17,6 +17,10 @@ Template Name: Reservation
 
             <div id="divReservationForm">
                 <span id="reserv-header">Резервация столика</span>
+                <div id="reservation-desc">
+                    <strong>Д</strong>ля того чтобы заказать столик или банкет в ресторане, пожалуйста, заполните эту форму.
+                    <strong>Н</strong>аш оператор свяжется с Вами по указанному Вами телефону или e-mail для подтверждения заказа.
+                </div>
                 <form id="reservation-form" name="reservation-form" method="post" action=""
                       enctype="multipart/form-data">
                     <fieldset id="fsReservation">

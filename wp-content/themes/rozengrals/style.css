@@ -663,6 +663,19 @@ a:hover, .active a {
     margin-top: -22px;
 }
 
+#description-2 {
+    width: 98%;
+    min-height:600px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 1em !important;
+    margin-top: -22px;
+}
+
+#description-2 p{
+    text-indent: 20px;
+}
+
 .main-char {
     font-family: 'cyrillicgothregular';
     font-size: 2em;

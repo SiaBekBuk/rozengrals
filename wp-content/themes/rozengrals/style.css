@@ -1,9 +1,10 @@
 /*   
 Theme Name: Rozengrals
 Theme URI: http://rozengrals.lv
-Description: This is just a BLANK starter WordPress Theme template -- WordPress v2.9.1
+Description:
 Author: Aleksey Klyukin
 Author URI: http://klyukin.lv
+Email: aleksey@klyukin.lv
 Version: 1
 */
 
@@ -1596,6 +1597,12 @@ a:hover, .active a {
     font: 18px/1.4 Georgia, Serif;
     text-align: center;
 }
+
+#contact-msg span{
+    color:#008800;
+    font-weight:bold;
+}
+
 
 #contactform-header,#contact-desc h2{
     color: #42110e;

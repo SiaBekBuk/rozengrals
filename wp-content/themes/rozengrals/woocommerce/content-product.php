@@ -11,8 +11,14 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop;
+global $product, $woocommerce_loop,$cart_count;
 
+$product_in_cart;
+foreach ( $cart_count as $cart_item_key => $values ) {
+    if($values['product_id'] == $product->id){
+        $product_in_cart = $values['quantity'];
+    }
+}
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
 	$woocommerce_loop['loop'] = 0;
@@ -36,7 +42,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
 
-<div class="cat-item clearfix">
+<div class="cat-item clearfix" id="item<?php echo $product->id;  ?>">
     <div class="cat-item-number"><?php echo $woocommerce_loop['loop'] ?>.</div>
     <div class="cat-item-name">
         <?php the_title();?>
@@ -47,12 +53,25 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
     <div class="cat-item-price">
         <?php
             $price = $product->get_price();
-            $price_eur = $price/0.702804;
-            echo number_format($price,2,'.',' ').'/'.number_format($price_eur,2,'.',' ');
+            echo '€ '. number_format($price,2,'.',' ');
 
         ?> </div>
     <div class="item-add-to-basket">
-        <div class="item-add-2"></div>
+        <button type="submit"  id="add_cart_<?php echo $product->id; ?>"
+              data-product_id="<?php echo $product->id; ?>"
+                class="item-add-2 roz_add_to_cart  <?php if($product_in_cart) echo 'hide'; ?>">
+        </button>
+
+        <div class=" <?php if(!$product_in_cart) echo 'hide'; ?>" id ="basket_<?php echo $product->id;?>">
+            <div class="item-added-count"><?php echo $product_in_cart; ?></div>
+            <div class="item-count-control">
+                <a href=""></a>
+                <div data-product_id="<?php echo $product->id; ?>"
+                        class="item-add roz_add_to_cart">+
+                </div>
+                <div class="item-remove" data-product_id="<?php echo $product->id; ?>">-</div>
+            </div>
+        </div>
     </div>
     <div class="item-comment clearfix">
         <?php the_content();?>

@@ -7,7 +7,13 @@ Template Name: WP-Shop
 
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+global $woocommerce;
+
+$cart_count = $woocommerce->cart->get_cart();
+
+?>
 
     <div id="bg-mid">
         <div id="content">
@@ -15,7 +21,7 @@ Template Name: WP-Shop
                 <table>
                     <tr>
                         <td>
-                            <div class="eur">LVL/EUR</div>
+
                             <div  class="menu-cat-content"  id ="pl-snacks-and-salads">
                                 <?php
                                 if (is_product_category()) {
@@ -41,6 +47,24 @@ Template Name: WP-Shop
                         </td>
 
                         <td style="vertical-align: top;">
+                            <div id="cart" <?php if(!$woocommerce->cart->cart_contents_count>0){ echo 'style="visibility:hidden;"'; } ?> >
+                                <div id="cart-header">Корзина</div>
+                                <div id="cart-item-count">Количество покупок: <span><?php echo $woocommerce->cart->cart_contents_count;?></span></div>
+                                <div id="cart-sum">Сумма: <span>
+                                                <?php
+                                                $price_total =$woocommerce->cart->cart_contents_total ;
+                                                $price_total_eur = $price_total/0.702804;
+                                                echo number_format($price_total,2,'.',' ').'Ls /'.number_format($price_total_eur,2,'.',' ').'Eur';
+
+                                                ?>
+                                        </span></div>
+                                <div id="cart-to-reservation">
+                                    <a href="<?php echo $woocommerce->cart->get_cart_url()."#nav";?>" id="cart-reserv-btnx" class="btnx">
+                                        Перейти к резервации
+                                    </a>
+                                </div>
+                            </div>
+
                             <?php
                             global $post;
                             $catTerms = get_terms('product_cat', array('hide_empty' => 0,)); ?>

@@ -4,39 +4,6 @@ Template Name: Contacts
 */
 ?>
 <?php get_header(); ?>
-<?php
-if( $_SERVER['REQUEST_METHOD'] == "POST" ) {
-    $to = "alexgloock@gmail.com";
-    $from = $_POST['email'];
-    $subject = "Сообщение из формы обратной связи";
-
-    $message = $_POST['message']."\r\n\r\n Телефон:".$_POST['phone'];
-
-    $headers = 'From: '.$from."\r\n".
-        'Reply-To: '.$from."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-//    ini_set("SMTP","smtpout.europe.secureserver.net" );
-//    ini_set("smtp_port ","80" );
-//    ini_set('sendmail_from', 'me@domain.com');
-
-    if( wp_mail($to, $subject, $message, $headers) ) {
-        ?><script type="text/javascript">
-            $(function(){
-                jQuery('#contact-msg').html('<span>Сооббщение успешно отправлено!</span>');
-            });
-            //alert("Сообщение отправлено!");
-        </script><?php
-    } else {
-        ?><script type="text/javascript">
-            $(function(){
-                jQuery('#contact-msg').html('<span>Сообщение не было отправлено, повторите попытку позже!</span>');
-            });
-            //alert("Сообщение не было отправлено!");
-        </script><?php
-    };
-}
-?>
     <div id="bg-mid">
         <div id="content">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -81,11 +48,8 @@ if( $_SERVER['REQUEST_METHOD'] == "POST" ) {
                 <div id="contact-desc">
                     При помощи этой формы Вы можете задать нам любой интересующий Вас вопрос!
                 </div>
-                <div id="contact-msg"></div>
-
                 <form id="contactform" name="contactform" method="post"
-                      action=""
-                      class="contactform"
+                      action="" class="contactform"
                       enctype="multipart/form-data">
                     <div id="cftbx1" class="cftbx">
                         <input type="text" id="fullname" placeholder="Имя" tabindex="1" name="fullname" required/>
@@ -97,7 +61,6 @@ if( $_SERVER['REQUEST_METHOD'] == "POST" ) {
                     </div>
                     <input type="submit" value="Отослать" tabindex="5" id="btn-contactform-submit" name="btnSubmit"/>
                 </form>
-
             </div>
 
         </div>

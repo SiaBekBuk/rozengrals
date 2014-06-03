@@ -114,6 +114,7 @@ jQuery(function () {
 });
 
 jQuery(function () {
+
     jQuery('#datetime').datetimepicker('setStartDate', '2013-08-01');
 });
 

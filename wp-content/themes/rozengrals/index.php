@@ -7,6 +7,7 @@ Template Name: Index
 
 <div id="bg-mid">
     <div id="content">
+
         <div id="description-2">
             <p><span class="main-char">А</span>утентичный, средневековый, ресторан Rozengrāls
                 распологается в центре Старой Риги в помещениях, которые уже в 1293 году упоминаются в манускриптах, как

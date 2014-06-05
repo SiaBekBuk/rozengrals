@@ -74,7 +74,7 @@
         <div id="gerb-left"></div>
         <div id="gerb-right"></div>
 
-        <a href="<?php echo get_option('home'); ?>/" id="main-logo-link">
+        <a href="<?php echo icl_get_home_url(); ?>/" id="main-logo-link">
             <div id="logo"></div>
         </a>
 
@@ -82,11 +82,17 @@
             <div id="anno"></div>
         </div>
         <div id="langbar">
+            <?php
+            $languages = icl_get_languages('skip_missing=0&orderby=code');
+            if (!empty($languages)) {
+                foreach ($languages as $l) {
+                    echo '<a href="'.$l['url'].'">';
+                    echo  '<div id="flag-'.$l['language_code'].'"></div>';
+                    echo '</a>';
+                }
+            }
+            ?>
 
-            <div id="flag-lv"></div>
-            <div id="flag-ru"></div>
-            <div id="flag-en"></div>
-            <div id="flag-de"></div>
         </div>
         <div class="clearfix"></div>
         <div id="nav">

@@ -53,8 +53,7 @@ $cart_count = $woocommerce->cart->get_cart();
                                 <div id="cart-sum">Сумма: <span>
                                                 <?php
                                                 $price_total =$woocommerce->cart->cart_contents_total ;
-                                                $price_total_eur = $price_total/0.702804;
-                                                echo number_format($price_total,2,'.',' ').'Ls /'.number_format($price_total_eur,2,'.',' ').'Eur';
+                                                echo '€ '.number_format($price_total,2,'.',' ');
 
                                                 ?>
                                         </span></div>

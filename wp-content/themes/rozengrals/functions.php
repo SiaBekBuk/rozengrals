@@ -47,13 +47,6 @@ remove_filter( $filter, 'wp_filter_kses' );
         remove_filter( $filter, 'wp_kses_data' );
     }
 
-add_filter('woocommerce_default_catalog_orderby', 'custom_default_catalog_orderby');
-
-
-
-function custom_default_catalog_orderby() {
-    return 'date'; // Can also use title and price
-}
 
 
 

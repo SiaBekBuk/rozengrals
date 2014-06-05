@@ -852,10 +852,10 @@ a:hover, .active a {
 /*    background: url('images/menu-content-bg-02.png') no-repeat;
     background-size: 975px 825px;*/
     width: 975px;
-    height: 825px;
     min-height: 700px;
     margin-left: -55px;
     margin-top: -40px;
+    padding-bottom: 70px;
     color:#660000;
 }
 
@@ -900,7 +900,6 @@ a:hover, .active a {
 
     #cart-item-count span, #cart-sum span{
         float:right;
-        width:40px
     }
 
     #cart-item-count, #cart-sum{
@@ -1216,6 +1215,7 @@ a:hover, .active a {
     background-size: contain;
     margin-left: 5px;
     cursor: pointer;
+    border:0px;
 }
 
 .item-add-3 {
@@ -1280,6 +1280,20 @@ a:hover, .active a {
     height: 97px;
 }
 
+#uzkodas-first {
+    background: url('images/Uzkodas_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+#salati-first {
+    background: url('images/Salati_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
+
 #salad-first {
     background: url('images/salati.png') no-repeat;
     background-size: contain;
@@ -1315,11 +1329,19 @@ a:hover, .active a {
 }*/
 
 #fish-first {
-    background: url('images/fish_first.png') no-repeat;
+     background: url('images/fish_first.png') no-repeat;
+     background-size: contain;
+     width: 99px;
+     height: 97px;
+ }
+#zupas_first {
+    background: url('images/zupas_first.png') no-repeat;
     background-size: contain;
     width: 99px;
     height: 97px;
 }
+
+
 
 /*#pl-garnish {
     color: #00592E;
@@ -1361,6 +1383,13 @@ a:hover, .active a {
     width: 99px;
     height: 97px;
 }
+#veget-first {
+    background: url('images/veget_first.png') no-repeat;
+    background-size: contain;
+    width: 99px;
+    height: 97px;
+}
+
 
 /*#pl-desserts, #pl-hot-drinks {
     color: #00367B;
@@ -1730,6 +1759,7 @@ a:hover, .active a {
     height: 600px;
     margin-top: 20px;
     text-align: center;
+    padding-bottom:70px;
 }
 
 #reserv-header{

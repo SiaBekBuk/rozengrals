@@ -57,10 +57,10 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
         ?> </div>
     <div class="item-add-to-basket">
-        <button type="submit"  id="add_cart_<?php echo $product->id; ?>"
-              data-product_id="<?php echo $product->id; ?>"
-                class="item-add-2 roz_add_to_cart  <?php if($product_in_cart) echo 'hide'; ?>">
-        </button>
+        <!--<button type="submit"  id="add_cart_<?php /*echo $product->id; */?>"
+              data-product_id="<?php /*echo $product->id; */?>"
+                class="item-add-2 roz_add_to_cart  <?php /*if($product_in_cart) echo 'hide'; */?>">
+        </button>-->
 
         <div class=" <?php if(!$product_in_cart) echo 'hide'; ?>" id ="basket_<?php echo $product->id;?>">
             <div class="item-added-count"><?php echo $product_in_cart; ?></div>
@@ -74,7 +74,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
         </div>
     </div>
     <div class="item-comment clearfix">
-        <?php the_content();?>
+        <?php echo $post->post_excerpt;?>
     </div>
 </div>
 

@@ -14,53 +14,15 @@ Template Name: Contacts
                 </div>
             <?php endwhile; endif; ?>
 
-            <div id="contact-desc">
-                <h2>Добро пожаловать в <span class="gothic-latin">Rozengrāls</span>!</h2>
-               <strong>Н</strong>аш ресторан располагается в самом центре Старой Риги в помещениях, которые уже в 1293 году упоминаются в манускриптах, как самый древний винный погреб и место проведення торжеств Рижской ратуши!
-            </div>
-<br/>
-            <table style="width:800px; margin:0 auto;">
-                <tr>
-                    <td style="width:400px;">
-                        <div id="contacts-info">
-                            <p>Контактный телефон/факс: <b>+371 67224748</b>, <b>+371 67220356</b></p>
 
-                            <p>E-Mail: <a href="mailto:info@rozengrals.lv"><b>info@rozengrals.lv</b></a></p>
-
-                            <p>Адрес: <b>Rozena 1, Rīga, Latvija</b></p>
-                        </div>
-                    </td>
-                    <td style="width:400px;">
-                        <div id="googlemap">
-                            <iframe width="360" height="230" frameborder="0" scrolling="no" marginheight="0"
-                                    marginwidth="0"
-                                    src="http://maps.google.com/maps/ms?vpsrc=6&amp;ctz=-120&amp;ie=UTF8&amp;msa=0&amp;msid=212996677177251629188.0004b2a377acd438c38c8&amp;t=m&amp;ll=56.94886,24.106343&amp;spn=0.005851,0.008562&amp;z=16&amp;output=embed"></iframe>
-                            <div id="googlemap-link"><a
-                                    href="https://maps.google.com/maps/ms?vpsrc=6&ctz=-120&ie=UTF8&msa=0&msid=212996677177251629188.0004b2a377acd438c38c8&t=m&ll=56.94886,24.106343&spn=0.005851,0.008562&z=16&output=embed"
-                                    target="_blank">Просмотреть увеличенную карту</a></div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
 
             <div id="div-contactform">
-                <span id="contactform-header">Задайте нам вопрос</span>
-                <div id="contact-desc">
-                    При помощи этой формы Вы можете задать нам любой интересующий Вас вопрос!
+                <span id="contactform-header"><?php echo __("Задайте нам вопрос","rozengral");?></span>
+                <div id="contact-desc"><?php echo __("При помощи этой формы Вы можете задать нам любой интересующий Вас вопрос!","rozengral");?>
                 </div>
-                <form id="contactform" name="contactform" method="post"
-                      action="" class="contactform"
-                      enctype="multipart/form-data">
-                    <div id="cftbx1" class="cftbx">
-                        <input type="text" id="fullname" placeholder="Имя" tabindex="1" name="fullname" required/>
-                        <input type="text" id="phone" placeholder="Телефон" tabindex="2" name="phone" required/>
-                        <input type="text" id="email" placeholder="E-mail" tabindex="3" name="email" required/>
-                    </div>
-                    <div id="cftbx2" class="cftbx">
-                        <textarea id="message" tabindex="4" name="message" cols="60" rows="7" required></textarea>
-                    </div>
-                    <input type="submit" value="Отослать" tabindex="5" id="btn-contactform-submit" name="btnSubmit"/>
-                </form>
+
+                <?php echo do_shortcode( __('[contact-form-7 id="490" title="Контакт" html_id="contactform"]',"rozengral") ); ?>
+
             </div>
 
         </div>

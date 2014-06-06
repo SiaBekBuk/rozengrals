@@ -41,12 +41,14 @@
     </title>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <?php wp_enqueue_script("jquery"); ?>
 
+    <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css"/>
 
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
 
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/CyrillicGoth/stylesheet.css" type="text/css"
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/Goth/stylesheet.css" type="text/css"
           media="all"/>
 
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/old_london/stylesheet.css" type="text/css"
@@ -58,9 +60,7 @@
 
     <?php //if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
-    <?php wp_enqueue_script("jquery"); ?>
 
-    <?php wp_head(); ?>
 
     <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/scripts.js"></script>
     <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/bootstrap-datetimepicker.js"></script>

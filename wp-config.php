@@ -85,6 +85,7 @@ define('WP_DEBUG', false);
 /** Абсолютный путь к директории WordPress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
+if ( ! defined( 'WPCF7_AUTOP' ) )
+    define( 'WPCF7_AUTOP', false );
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');

@@ -66,13 +66,14 @@ $cart_count = $woocommerce->cart->get_cart();
 
                             <?php
                             global $post;
-                            $catTerms = get_terms('product_cat', array('hide_empty' => 0,)); ?>
+                            $catTerms = get_terms('product_cat', array('hide_empty' => 1,)); ?>
                             <div id="menu-categories2" class="menu-categories">
                                 <ul>
                                     <?php foreach ($catTerms as $catTerm) :
-                                        get_term_link($catTerm->slug, 'product_cat');
-
-                                        echo '<li '.($cat->slug==$catTerm->slug?'class="active"':'').'><a href="' . get_term_link($catTerm->slug, 'product_cat') . '#nav">' . $catTerm->name . '</a></li>';
+                                        if($catTerm->parent == 0){
+                                            get_term_link($catTerm->slug, 'product_cat');
+                                            echo '<li '.($cat->slug==$catTerm->slug?'class="active"':'').'><a href="' . get_term_link($catTerm->slug, 'product_cat') . '#nav">' . $catTerm->name . '</a></li>';
+                                        }
                                     endforeach;
                                     ?>
                                 </ul>

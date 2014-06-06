@@ -570,6 +570,12 @@ a:hover, .active a {
     margin: 0 auto;
 }
 
+#nav div[class*='menu-main']{
+    width: 850px;
+    height: 41px;
+    margin: 0 auto;
+}
+
 #nav ul, #nav li {
     display: inline-block;
     /*IE7*/
@@ -1617,10 +1623,9 @@ a:hover, .active a {
 
 #googlemap-link {
     font-size: small;
-    width: 230px;
+    width: 360px;
     margin-top: -6px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
 
 #contacts-info {
@@ -1652,9 +1657,6 @@ a:hover, .active a {
     font-size: 28px;
 }
 
-.gothic-latin{
-    font-family: 'old_londonregular';
-}
 
 #div-contactform{
     text-align: center;
@@ -1666,9 +1668,7 @@ a:hover, .active a {
 #btn-contactform-submit{
     font-family: 'cyrillicgothregular';
     font-size: 18px;
-    position: relative;
-    top: 215px;
-    right: -20px;
+
     border: none;
     background: none;
     border-bottom: 1px dotted #660000;
@@ -1778,11 +1778,35 @@ a:hover, .active a {
     margin: 30px;
     vertical-align: top;
     margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.cftbx  span.wpcf7-not-valid-tip{
+    display: none;
 }
 
 #contactform {
     height: 265px;
     width: 800px;
+    text-align: left;
+    padding-left: 80px;
+}
+
+div.wpcf7-validation-errors{
+    border:0px;
+    margin: 0px;
+    margin: 0px;
+    color: #ae0203;
+    text-align: center;
+    margin-top: 20px;
+}
+div.wpcf7-mail-sent-ok{
+    border:0px;
+    margin: 0px;
+    margin: 0px;
+    color: #398f14;
+    text-align: center;
+    margin-top: 20px;
 }
 
 #reservation-form {
@@ -1813,7 +1837,7 @@ a:hover, .active a {
     border-radius: 20px;*/
 }
 
-#contactform input[type="text"], #reservation-form input[type="text"], #message, #reserv-message {
+#contactform input[type="text"],#contactform  input[type="email"], #reservation-form input[type="text"],#reservation-form  input[type="email"], #message, #reserv-message {
     background: rgb(250, 234, 215);
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
@@ -1824,15 +1848,15 @@ a:hover, .active a {
     border-radius: 5px;
 }
 
-#contactform input[type="text"] {
+#contactform input[type="text"], #contactform input[type="email"] {
     margin-bottom: 30px;
 }
 
-#reservation-form input[type="text"] {
+#reservation-form input[type="text"],#contactform input[type="email"] {
     margin-bottom: 5px;
 }
 
-#contactform input[type="text"], #reservation-form input[type="text"] {
+#contactform input[type="text"],#contactform input[type="email"], #reservation-form input[type="text"],#reservation-form  input[type="email"] {
     height: 30px;
     width: 260px;
 }

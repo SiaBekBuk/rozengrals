@@ -115,11 +115,10 @@ jQuery(function () {
 
 jQuery(function () {
 
-    jQuery('#datetime').datetimepicker('setStartDate', '2013-08-01');
+    jQuery('#datetime').datetimepicker();
 });
 
 
-jQuery('#datetime').datetimepicker().on('changeDate', function () {
-    jQuery('#datetime').datetimepicker('hide');
-});
+
+
 

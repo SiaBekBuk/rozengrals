@@ -16,21 +16,16 @@ Template Name: Reservation
 
 
             <div id="divReservationForm">
-                <form id="reservation-form" name="reservation-form" method="post" action=""
-                      enctype="multipart/form-data">
-                    <span id="reserv-header">Резервация столика</span>
+
+                    <span id="reserv-header"><?php echo __("Резервация столика","rozengral");?></span>
 
                     <div id="reservation-desc">
-                        <strong>Д</strong>ля того чтобы заказать столик или банкет в ресторане, пожалуйста, заполните
-                        эту форму.
-                        <strong>Н</strong>аш оператор свяжется с Вами по указанному Вами телефону или e-mail для
-                        подтверждения
-                        заказа.
+                        <?php echo __("Для того чтобы заказать столик или банкет в ресторане, пожалуйста, заполните эту форму. Наш оператор свяжется с Вами по указанному Вами телефону или e-mail для  подтверждения  заказа.","rozengral");?>
                     </div>
                     <?php
                     if (sizeof($woocommerce->cart->get_cart()) > 0) {
                         ?>
-                        <h2>Ваш заказ</h2>
+                        <h2><?php echo __("Ваш заказ","rozengral");?></h2>
 
                         <?php
                         $i = 0;
@@ -90,27 +85,11 @@ Template Name: Reservation
                     }
 
                     ?>
+                <?php echo do_shortcode( __('[contact-form-7 id="527" title="Резервация" html_id="reservation-form"]',"rozengral") ); ?>
 
-                    <fieldset id="fsReservation">
-                        <div id="cftbx1" class="cftbx">
-                            <input type="text" id="datetime" name="datetime" placeholder="Дата и время…"
-                                   data-date="12-02-2012" data-date-format="dd-mm-yyyy hh:ii">
-                            <input type="text" id="persons" name="persons" placeholder="Количество персон…">
-                            <input type="text" id="firstname" name="firstname" placeholder="Имя...">
-                            <input type="text" id="lastname" name="lastname" placeholder="Фамилия...">
-                            <input type="text" id="phone" name="phone" placeholder="Контактный телефон...">
-                            <input type="text" id="email" name="email" placeholder="E-Mail...">
-                        </div>
-                        <div id="cftbx2" class="cftbx">
-                            <textarea rows="6" cols="70" id="reserv-message" name="reserv-message"
-                                      placeholder="Ваши пожелания и комментарии..."></textarea>
-                        </div>
-                        <button type="submit" class="btn" id="btnSubmit" name="btnSubmit">Отправить</button>
-                        <div id="reserv-help">Резервация действительна только после получения подтверждения.</div>
-                    </fieldset>
 
-                </form>
 
+                <div id="reserv-help"><?php echo __("Резервация действительна только после получения подтверждения.","rozengral");?></div>
             </div>
 
 

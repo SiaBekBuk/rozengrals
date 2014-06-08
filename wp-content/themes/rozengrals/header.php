@@ -81,7 +81,8 @@
         <div id="main-picture">
             <div id="anno"></div>
         </div>
-        <div id="langbar">
+
+        <div id="langbar2">
             <?php
             $languages = icl_get_languages('skip_missing=0&orderby=code');
             if (!empty($languages)) {
@@ -92,8 +93,8 @@
                 }
             }
             ?>
-
         </div>
+
         <div class="clearfix"></div>
         <div id="nav">
             <?php wp_nav_menu('menu=main'); ?>
